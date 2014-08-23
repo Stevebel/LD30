@@ -28,8 +28,18 @@ public class HarpoonGun : MonoBehaviour {
 
     public void Shoot()
     {
-		ShootHarpoon ();
-		return;
+        if (CanShoot())
+        {
+            cooldownRemaining = cooldownSecs;
+
+            Quaternion rotation = Quaternion.LookRotation(Camera.main.ScreenToWorldPoint(Input.mousePosition) - _transform.position, Vector3.down);
+
+            Rigidbody2D harpoon = Instantiate(harpoonPrefab, _transform.position, rotation) as Rigidbody2D;
+            Debug.Log(harpoon.transform.forward.magnitude);
+            harpoon.velocity = harpoon.transform.forward * harpoonSpeed;
+            harpoon.mass = .001f;
+        }
+        /*
         if (CanShoot())
         {
             Debug.Log("Shoot at: " + aim.x +", "+aim.y);
@@ -45,23 +55,9 @@ public class HarpoonGun : MonoBehaviour {
                     target.Hit(this);
                 }
             }
-        }
+        }*/
     }
 
-	public void ShootHarpoon()
-	{
-		if(CanShoot())
-		{
-			cooldownRemaining = cooldownSecs;
-
-			Vector3 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			Quaternion rotation = Quaternion.LookRotation (mousePosition - PlayerController.player.transform.position, Vector3.forward);
-
-			Rigidbody2D harpoon = Instantiate(harpoonPrefab, _transform.position, rotation) as Rigidbody2D;
-			harpoon.velocity = harpoon.transform.forward * harpoonSpeed;
-			harpoon.mass = .001f;
-		}
-	}
 
     public bool CanShoot()
     {

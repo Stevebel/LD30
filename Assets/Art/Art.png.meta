@@ -10,6 +10,9 @@ TextureImporter:
     21300010: CooldownInside_Ready
     21300012: CooldownOutside
     21300014: Cursor
+    21300016: HarpoonGunBase
+    21300018: HarpoonGun
+    21300020: Harpoon
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +33,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 1
@@ -128,6 +131,36 @@ TextureImporter:
         y: 473
         width: 79
         height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HarpoonGunBase
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 394
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HarpoonGun
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 490
+        width: 161
+        height: 50
+      alignment: 9
+      pivot: {x: .253036201, y: .438829958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Harpoon
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 415
+        width: 128
+        height: 25
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

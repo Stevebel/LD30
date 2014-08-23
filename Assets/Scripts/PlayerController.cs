@@ -12,8 +12,7 @@ public class PlayerController : MonoBehaviour
 
 	void Awake()
 	{
-		if(player != this)
-			player = this;
+		player = this;
 		character = GetComponent<SpaceCharacter> ();
 	}
 

@@ -28,7 +28,7 @@ public class SpaceCharacter : MonoBehaviour
 
 	public void ForceMove(float horiz, float vert)
 	{
-		rigidbody2D.AddForce (new Vector2 (horiz * acceleration, vert * acceleration));
+		rigidbody2D.AddForce (new Vector2 (horiz * acceleration * mass, vert * acceleration * mass));
 		Vector2 velocity = rigidbody2D.velocity;
 		velocity.x = Mathf.Clamp (velocity.x, -maxSpeed, maxSpeed);
 		velocity.y = Mathf.Clamp (velocity.y, -maxSpeed, maxSpeed);

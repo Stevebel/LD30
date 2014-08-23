@@ -123,7 +123,57 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 110759133
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300008, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
+  m_Sprite: {fileID: 21300010, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &269568728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 269568729}
+  - 212: {fileID: 269568730}
+  m_Layer: 10
+  m_Name: HarpoonGunBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &269568729
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 269568728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0251875669, y: -.0761646032, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_Children: []
+  m_Father: {fileID: 1781429184}
+  m_RootOrder: 0
+--- !u!212 &269568730
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 269568728}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300016, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &271481155
 GameObject:
@@ -169,6 +219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   percent: 1
   inside: {fileID: 93346488}
+  fullSprite: {fileID: 21300010, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
+  partialSprite: {fileID: 21300008, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
 --- !u!212 &271481158
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -192,6 +244,55 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &279950359
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.02651453
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.14070606
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6100000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+  m_RootGameObject: {fileID: 1862389667}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &288146035
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +458,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_FixedAngle: 0
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -376,7 +477,7 @@ Transform:
   - {fileID: 288146040}
   - {fileID: 1781429184}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &365799333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,7 +567,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &394394195
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +750,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 526966365}
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -669,7 +770,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &526966370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,6 +845,21 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+      propertyPath: fullSprite
+      value: 
+      objectReference: {fileID: 21300010, guid: 67619aa66eaf1e647a1c3e49a9611a0f,
+        type: 3}
+    - target: {fileID: 11400000, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+      propertyPath: partialSprite
+      value: 
+      objectReference: {fileID: 21300008, guid: 67619aa66eaf1e647a1c3e49a9611a0f,
+        type: 3}
+    - target: {fileID: 21200000, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300010, guid: 67619aa66eaf1e647a1c3e49a9611a0f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
   m_RootGameObject: {fileID: 357506122}
@@ -762,7 +878,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: .993985653
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -796,11 +912,168 @@ Prefab:
       propertyPath: cooldownBar
       value: 
       objectReference: {fileID: 271481157}
+    - target: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
+      propertyPath: cableLength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
+      propertyPath: harpoonSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
   m_RootGameObject: {fileID: 1781429183}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1541631937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1541631938}
+  - 212: {fileID: 1541631939}
+  m_Layer: 10
+  m_Name: Harpoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1541631938
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1541631937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .913929105, y: .00405228138, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1637570873}
+  m_RootOrder: 0
+--- !u!212 &1541631939
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1541631937}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: -3
+  m_Sprite: {fileID: 21300020, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1637570872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1637570873}
+  - 212: {fileID: 1637570874}
+  - 50: {fileID: 1637570876}
+  - 233: {fileID: 1637570875}
+  - 61: {fileID: 1637570877}
+  m_Layer: 10
+  m_Name: HarpoonGunGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1637570873
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637570872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0308784992, y: .0173141956, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_Children:
+  - {fileID: 1541631938}
+  m_Father: {fileID: 1781429184}
+  m_RootOrder: 1
+--- !u!212 &1637570874
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637570872}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300018, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!233 &1637570875
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637570872}
+  m_Enabled: 1
+  m_CollideConnected: 0
+  m_ConnectedRigidBody: {fileID: 1781429186}
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_UseMotor: 1
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
+--- !u!50 &1637570876
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637570872}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!61 &1637570877
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637570872}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.61000001, y: .5}
+  m_Center: {x: .397611678, y: .0305850208}
 --- !u!1 &1781429183
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +1083,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1781429184}
   - 114: {fileID: 1781429185}
+  - 50: {fileID: 1781429186}
+  - 235: {fileID: 1781429187}
+  - 233: {fileID: 1781429189}
   m_Layer: 10
   m_Name: HarpoonGun
   m_TagString: Untagged
@@ -824,9 +1100,11 @@ Transform:
   m_PrefabInternal: {fileID: 1406190674}
   m_GameObject: {fileID: 1781429183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .993985653, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 269568729}
+  - {fileID: 1637570873}
   m_Father: {fileID: 365799332}
   m_RootOrder: 2
 --- !u!114 &1781429185
@@ -847,6 +1125,140 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   aim: {x: 0, y: 0}
-  cableLength: 10
+  cableLength: 5
   harpoonPrefab: {fileID: 5000000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
-  harpoonSpeed: 5
+  harpoonSpeed: 10
+--- !u!50 &1781429186
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781429183}
+  m_Mass: .00100000005
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!235 &1781429187
+WheelJoint2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781429183}
+  m_Enabled: 0
+  m_CollideConnected: 0
+  m_ConnectedRigidBody: {fileID: 365799331}
+  m_Anchor: {x: 0, y: -1}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_Suspension:
+    serializedVersion: 2
+    m_DampingRatio: .699999988
+    m_Frequency: 2
+    m_Angle: 90
+  m_UseMotor: 1
+  m_Motor:
+    m_MotorSpeed: 1000
+    m_MaximumMotorForce: 10000
+--- !u!233 &1781429189
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781429183}
+  m_Enabled: 1
+  m_CollideConnected: 0
+  m_ConnectedRigidBody: {fileID: 365799331}
+  m_Anchor: {x: 0, y: -1}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_UseMotor: 1
+  m_Motor:
+    m_MotorSpeed: 10
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
+--- !u!1 &1862389667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+  m_PrefabInternal: {fileID: 279950359}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1862389671}
+  - 50: {fileID: 1862389670}
+  - 212: {fileID: 1862389669}
+  - 61: {fileID: 1862389668}
+  m_Layer: 11
+  m_Name: HarpoonPrefab
+  m_TagString: Harpoon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1862389668
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862389667}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .100000001}
+  m_Center: {x: 0, y: 0}
+--- !u!212 &1862389669
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: 7f4a47d40b6cb504882754428a15e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 279950359}
+  m_GameObject: {fileID: 1862389667}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300020, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!50 &1862389670
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 7f4a47d40b6cb504882754428a15e0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 279950359}
+  m_GameObject: {fileID: 1862389667}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+--- !u!4 &1862389671
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+  m_PrefabInternal: {fileID: 279950359}
+  m_GameObject: {fileID: 1862389667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.02651453, y: -1.14070606, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
