@@ -63,9 +63,9 @@ TextureImporter:
     - name: HomePlanet
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 676
-        width: 155
+        width: 157
         height: 157
       alignment: 0
       pivot: {x: .5, y: .5}
