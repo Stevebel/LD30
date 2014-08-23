@@ -172,7 +172,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &271481155
@@ -636,6 +636,10 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: bb3f29c006ce10d499aaf2fed03ac50c, type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb3f29c006ce10d499aaf2fed03ac50c, type: 2}
   m_RootGameObject: {fileID: 394394195}
@@ -924,7 +928,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: -3
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300020, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1637570872
@@ -978,7 +982,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300018, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!233 &1637570875
@@ -1036,7 +1040,6 @@ GameObject:
   - 4: {fileID: 1781429184}
   - 114: {fileID: 1781429185}
   - 50: {fileID: 1781429186}
-  - 235: {fileID: 1781429187}
   - 233: {fileID: 1781429189}
   - 58: {fileID: 1781429188}
   m_Layer: 10
@@ -1096,26 +1099,6 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!235 &1781429187
-WheelJoint2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1781429183}
-  m_Enabled: 0
-  m_CollideConnected: 0
-  m_ConnectedRigidBody: {fileID: 365799331}
-  m_Anchor: {x: 0, y: -1}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_Suspension:
-    serializedVersion: 2
-    m_DampingRatio: .699999988
-    m_Frequency: 2
-    m_Angle: 90
-  m_UseMotor: 1
-  m_Motor:
-    m_MotorSpeed: 1
-    m_MaximumMotorForce: 10000
 --- !u!58 &1781429188
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1140,7 +1123,7 @@ HingeJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: 10
+    m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
