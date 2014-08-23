@@ -18,11 +18,12 @@ public class Tether : MonoBehaviour {
 
             Vector2 start = joint.connectedBody.position + joint.connectedAnchor;
             Vector2 end = joint.rigidbody2D.position + (rotate(joint.anchor, joint.rigidbody2D.rotation));
-            Vector2 direction = (end - start).normalized;
+            Vector2 distance = (end - start);
+            Vector2 direction = distance.normalized;
             Vector2 tangent = new Vector2(-direction.y, direction.x);
 
-            float height = (joint.distance - (end - start).magnitude) * 0.707f;
-            Debug.Log(joint.rigidbody2D.rotation);
+            float difference = joint.distance * joint.distance - distance.magnitude * distance.magnitude;
+            float height = difference <= 0 ? 0 : Mathf.Sqrt(difference) / 2;
             Vector2 current = start * 1;
             for (int i = 0; i <= segments; i++)
             {
