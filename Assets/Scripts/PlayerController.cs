@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
 	private SpaceCharacter character;
 
+	public LayerMask playerLayer;
+
 	public static PlayerController player;
 
 	void Awake()
