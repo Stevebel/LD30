@@ -13,6 +13,7 @@ TextureImporter:
     21300016: HarpoonGunBase
     21300018: HarpoonGun
     21300020: Harpoon
+    21300022: Arrow
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -161,6 +162,16 @@ TextureImporter:
         y: 415
         width: 128
         height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Arrow
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 685
+        width: 106
+        height: 130
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
