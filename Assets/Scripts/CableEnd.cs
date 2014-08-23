@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CableEnd : MonoBehaviour
 {
-	[SerializeField] private Rigidbody2D target;
+	[SerializeField] public Rigidbody2D target;
 
 	public void AddForce(Vector2 direction, float distance, float kcoeff)
 	{

@@ -6,6 +6,12 @@ public class TargetPlanet : MonoBehaviour
 	[SerializeField] private Transform hooker;
 	[SerializeField] float acceleration;
 	[SerializeField] float maxSpeed;
+	[SerializeField] float mass = 1;
+
+	void Awake()
+	{
+		rigidbody2D.mass = mass;
+	}
 
 	void FixedUpdate()
 	{
