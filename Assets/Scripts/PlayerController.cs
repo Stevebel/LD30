@@ -17,18 +17,9 @@ public class PlayerController : MonoBehaviour
 	}
 
 	void FixedUpdate()
-	{
-		Vector3 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		Quaternion rotation = Quaternion.LookRotation (character.transform.position - mousePosition, Vector3.forward);
-		//character.Rotate (rotation);
-
-		#if CROSS_PLATFORM_INPUT
-			float h = CrossPlatformInput.GetAxis("Horizontal");
-			float v = CrossPlatformInput.GetAxis("Vertical");
-		#else
-			float h = Input.GetAxis("Horizontal");
-			float v = Input.GetAxis("Vertical");
-		#endif
+	{		
+		float h = Input.GetAxis("Horizontal");
+		float v = Input.GetAxis("Vertical");
 
 		character.Move(h, v);
 	}

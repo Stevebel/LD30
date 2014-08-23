@@ -550,6 +550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 288146039}
   harpoon: {fileID: 1781429185}
+  turret: {fileID: 1637570876}
 --- !u!212 &394394197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -640,6 +641,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb3f29c006ce10d499aaf2fed03ac50c, type: 2}
+      propertyPath: turret
+      value: 
+      objectReference: {fileID: 1637570876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb3f29c006ce10d499aaf2fed03ac50c, type: 2}
   m_RootGameObject: {fileID: 394394195}
