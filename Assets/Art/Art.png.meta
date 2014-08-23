@@ -8,7 +8,7 @@ TextureImporter:
     21300006: ParkingSpace
     21300008: CooldownInside
     21300010: CooldownInside_Ready
-    21300012: Art_6
+    21300012: CooldownOutside
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -97,8 +97,8 @@ TextureImporter:
         y: 516
         width: 351
         height: 45
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CooldownInside_Ready
       rect:
@@ -107,18 +107,18 @@ TextureImporter:
         y: 464
         width: 351
         height: 46
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Art_6
+    - name: CooldownOutside
       rect:
         serializedVersion: 2
         x: 6
         y: 410
         width: 355
         height: 50
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
