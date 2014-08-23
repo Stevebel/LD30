@@ -16,18 +16,27 @@ public class HarpoonGun : MonoBehaviour {
 
     public void Shoot()
     {
-        cooldownRemaining = cooldownSecs;
-
-        RaycastHit2D targetHit = Physics2D.Raycast(new Vector2(_transform.position.x, _transform.position.y), aim, 1000f, targetableLayer);
-        if (targetHit.collider != null)
+        
+        if (CanShoot())
         {
-            GameObject targetObject = targetHit.collider.gameObject;
-            HarpoonTarget target = targetObject.GetComponent<HarpoonTarget>();
-            if (target != null)
+            Debug.Log("Shoot at: " + aim.x +", "+aim.y);
+            cooldownRemaining = cooldownSecs;
+
+            RaycastHit2D targetHit = Physics2D.Raycast(new Vector2(_transform.position.x, _transform.position.y), aim, 1000f, targetableLayer);
+            if (targetHit.collider != null)
             {
-                target.Hit(this);
+                GameObject targetObject = targetHit.collider.gameObject;
+                HarpoonTarget target = targetObject.GetComponent<HarpoonTarget>();
+                if (target != null)
+                {
+                    target.Hit(this);
+                }
             }
         }
+    }
+    public bool CanShoot()
+    {
+        return cooldownRemaining <= 0.00001f;
     }
 	// Update is called once per frame
 	void Update () {

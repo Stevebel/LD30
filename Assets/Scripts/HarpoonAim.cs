@@ -15,5 +15,11 @@ public class HarpoonAim : MonoBehaviour {
         Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
         transform.position = mousePosition;
+
+        if (Input.GetMouseButton(0))
+        {
+            harpoon.aim = new Vector2(mousePosition.x, mousePosition.y);
+            harpoon.Shoot();
+        }
 	}
 }
