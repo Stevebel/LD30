@@ -32,11 +32,12 @@ public class HarpoonGun : MonoBehaviour {
         {
             cooldownRemaining = cooldownSecs;
 
-            Quaternion rotation = Quaternion.LookRotation(Camera.main.ScreenToWorldPoint(Input.mousePosition) - _transform.position, Vector3.down);
+            float angle = Mathf.Atan2(_transform.position.y - aim.y, _transform.position.x - aim.x) * 180/Mathf.PI + 90;
+            Quaternion rotation = Quaternion.Euler(0, 0, angle);
 
             Rigidbody2D harpoon = Instantiate(harpoonPrefab, _transform.position, rotation) as Rigidbody2D;
-            Debug.Log(harpoon.transform.forward.magnitude);
-            harpoon.velocity = harpoon.transform.forward * harpoonSpeed;
+
+            harpoon.velocity = harpoon.transform.up * harpoonSpeed;
             harpoon.mass = .001f;
         }
         /*

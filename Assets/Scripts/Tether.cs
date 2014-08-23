@@ -31,7 +31,7 @@ public class Tether : MonoBehaviour {
                 current = Vector2.Lerp(start, end, pos);
                 float heightPos = Mathf.Sin(pos * Mathf.PI);//1f - Mathf.Abs((pos) - .5f) * 2f;
                 current = current + (tangent * (height * heightPos)); 
-                line.SetPosition(i, new Vector3(current.x, current.y, 0));
+                line.SetPosition(i, new Vector3(current.x, current.y, 200f));
             }
         }
 	}
