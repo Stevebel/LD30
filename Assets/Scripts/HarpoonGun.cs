@@ -11,7 +11,6 @@ public class HarpoonGun : MonoBehaviour {
     private Transform _transform;
 	// Use this for initialization
 	void Start () {
-        Shoot();
         _transform = transform;
     }
 
