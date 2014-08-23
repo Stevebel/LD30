@@ -3,13 +3,15 @@ using System.Collections;
 
 public class HarpoonGun : MonoBehaviour {
     public ProgressBar cooldownBar;
-    [Range(1f,60f)]public float cooldownSecs;
+    [Range(0.1f,60f)]public float cooldownSecs;
     public LayerMask targetableLayer;
     public Vector2 aim = new Vector2(0,0);
 	public float cableLength;
 
 	[SerializeField] Rigidbody2D harpoonPrefab;
 	[SerializeField] float harpoonSpeed;
+
+    [SerializeField] Tether tetherPrefab;
 
     private float cooldownRemaining;
     private GameObject[] targetable;
@@ -39,6 +41,19 @@ public class HarpoonGun : MonoBehaviour {
 
             harpoon.velocity = harpoon.transform.up * harpoonSpeed;
             harpoon.mass = .001f;
+
+            //Create joint
+            SpringJoint2D joint = gameObject.AddComponent<SpringJoint2D>();
+            joint.distance = cableLength;
+            //joint.maxDistanceOnly = true;
+            joint.connectedBody = harpoon;
+
+            //joint.anchor = collisionCenter - rigidbody2D.position;
+
+            //Draw tether
+            Tether tether = Instantiate(tetherPrefab) as Tether;
+            tether.joint = joint;
+            tether.transform.parent = harpoon.transform;
         }
         /*
         if (CanShoot())

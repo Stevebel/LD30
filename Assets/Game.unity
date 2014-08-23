@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0db822efd59dd47ab86c76762c8343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHarpoons: 1
+  maxHarpoons: 100
   tetherPrefab: {fileID: 11400000, guid: e51e2b3aad93cfb4baa49937afd2aec9, type: 2}
 --- !u!58 &526966371
 CircleCollider2D:
@@ -880,6 +880,15 @@ Prefab:
     - target: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
       propertyPath: harpoonSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
+      propertyPath: tetherPrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: e51e2b3aad93cfb4baa49937afd2aec9,
+        type: 2}
+    - target: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
+      propertyPath: cooldownSecs
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
@@ -1081,7 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownBar: {fileID: 271481157}
-  cooldownSecs: 1
+  cooldownSecs: .100000001
   targetableLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -1089,6 +1098,7 @@ MonoBehaviour:
   cableLength: 5
   harpoonPrefab: {fileID: 5000000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
   harpoonSpeed: 10
+  tetherPrefab: {fileID: 11400000, guid: e51e2b3aad93cfb4baa49937afd2aec9, type: 2}
 --- !u!50 &1781429186
 Rigidbody2D:
   m_ObjectHideFlags: 0

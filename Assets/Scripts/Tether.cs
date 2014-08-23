@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Tether : MonoBehaviour {
-    public DistanceJoint2D joint;
+    public AnchoredJoint2D joint;
     public int segments = 10;
     private LineRenderer line;
 	// Use this for initialization
@@ -22,7 +22,8 @@ public class Tether : MonoBehaviour {
             Vector2 direction = distance.normalized;
             Vector2 tangent = new Vector2(-direction.y, direction.x);
 
-            float difference = joint.distance * joint.distance - distance.magnitude * distance.magnitude;
+            float jointDistance = (joint is SpringJoint2D) ? (joint as SpringJoint2D).distance : (joint as DistanceJoint2D).distance;
+            float difference = jointDistance * jointDistance - distance.magnitude * distance.magnitude;
             float height = difference <= 0 ? 0 : Mathf.Sqrt(difference) / 2;
             Vector2 current = start * 1;
             for (int i = 0; i <= segments; i++)

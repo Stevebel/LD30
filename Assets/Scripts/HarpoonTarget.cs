@@ -31,8 +31,7 @@ public class HarpoonTarget : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Harpoon")
 		{
-            //Destroy harpoon
-            Destroy(collision.gameObject);
+            
             if (currentHarpoons < maxHarpoons)
             {
                 //Create joint
@@ -48,13 +47,17 @@ public class HarpoonTarget : MonoBehaviour
                 joint.anchor = collisionCenter - rigidbody2D.position;
 
                 //Draw tether
-                Tether tether = Instantiate(tetherPrefab) as Tether;
+                Tether tether = collision.gameObject.GetComponentInChildren<Tether>();//Instantiate(tetherPrefab) as Tether;
                 tether.joint = joint;
+                tether.transform.parent = transform;
 
 
 
                 //RaycastHit2D player = Physics2D.Raycast(collisionCenter, PlayerController.player.rigidbody2D.position - collisionCenter, Mathf.Infinity, PlayerController.player.playerLayer.value);
                 //joint.connectedAnchor = player.point - PlayerController.player.rigidbody2D.position;
+
+                //Destroy harpoon
+                Destroy(collision.gameObject);
 
                 currentHarpoons++;
             }
