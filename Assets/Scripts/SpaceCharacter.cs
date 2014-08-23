@@ -5,8 +5,22 @@ public class SpaceCharacter : MonoBehaviour
 {
 	[SerializeField] float acceleration;
 	[SerializeField] float maxSpeed;
+	[SerializeField] bool forceMove;
 
 	public void Move(float horiz, float vert)
+	{
+		if(forceMove)
+			ForceMove (horiz, vert);
+		else
+			VelMove (horiz, vert);
+	}
+
+	public void VelMove(float horiz, float vert)
+	{
+		rigidbody2D.velocity = new Vector2 (horiz * maxSpeed, vert * maxSpeed);
+	}
+
+	public void ForceMove(float horiz, float vert)
 	{
 		rigidbody2D.AddRelativeForce (new Vector2 (horiz * acceleration, vert * acceleration));
 		Vector2 velocity = rigidbody2D.velocity;

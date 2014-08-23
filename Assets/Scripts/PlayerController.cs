@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 	{
 		Vector3 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		Quaternion rotation = Quaternion.LookRotation (character.transform.position - mousePosition, Vector3.forward);
-		character.Rotate (rotation);
+		//character.Rotate (rotation);
 
 		#if CROSS_PLATFORM_INPUT
 			float h = CrossPlatformInput.GetAxis("Horizontal");
