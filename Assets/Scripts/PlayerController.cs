@@ -6,6 +6,11 @@ public class PlayerController : MonoBehaviour
 {
 	private SpaceCharacter character;
 
+	void Awake()
+	{
+		character = GetComponent<SpaceCharacter> ();
+	}
+
 	void FixedUpdate()
 	{
 		Vector3 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
