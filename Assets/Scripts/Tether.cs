@@ -4,7 +4,7 @@ using System.Collections;
 public class Tether : MonoBehaviour {
     public AnchoredJoint2D joint;
     public int segments = 10;
-    private LineRenderer line;
+    public LineRenderer line;
 	// Use this for initialization
 	void Start () {
         line = GetComponent<LineRenderer>();

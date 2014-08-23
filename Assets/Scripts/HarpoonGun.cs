@@ -55,23 +55,6 @@ public class HarpoonGun : MonoBehaviour {
             tether.joint = joint;
             tether.transform.parent = harpoon.transform;
         }
-        /*
-        if (CanShoot())
-        {
-            Debug.Log("Shoot at: " + aim.x +", "+aim.y);
-            cooldownRemaining = cooldownSecs;
-
-            RaycastHit2D targetHit = Physics2D.Raycast(new Vector2(_transform.position.x, _transform.position.y), aim, 1000f, targetableLayer);
-            if (targetHit.collider != null)
-            {
-                GameObject targetObject = targetHit.collider.gameObject;
-                HarpoonTarget target = targetObject.GetComponent<HarpoonTarget>();
-                if (target != null)
-                {
-                    target.Hit(this);
-                }
-            }
-        }*/
     }
 
 

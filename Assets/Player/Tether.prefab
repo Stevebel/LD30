@@ -42,6 +42,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint: {fileID: 0}
   segments: 15
+  line: {fileID: 0}
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -75,8 +76,8 @@ LineRenderer:
   - {x: 62.8960228, y: -17.8166428, z: 0}
   - {x: 63.1116486, y: -17.3655262, z: 0}
   m_Parameters:
-    startWidth: .100000001
-    endWidth: .100000001
+    startWidth: .0500000007
+    endWidth: .0500000007
     m_StartColor:
       serializedVersion: 2
       rgba: 4278190256
