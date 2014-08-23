@@ -6,9 +6,12 @@ public class HarpoonGun : MonoBehaviour {
     [Range(1f,60f)]public float cooldownSecs;
     public LayerMask targetableLayer;
     public Vector2 aim = new Vector2(0,0);
+	public float cableLength;
+
     private float cooldownRemaining;
     private GameObject[] targetable;
     private Transform _transform;
+
 	// Use this for initialization
 	void Start () {
         _transform = transform;
@@ -16,7 +19,6 @@ public class HarpoonGun : MonoBehaviour {
 
     public void Shoot()
     {
-        
         if (CanShoot())
         {
             Debug.Log("Shoot at: " + aim.x +", "+aim.y);

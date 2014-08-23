@@ -389,6 +389,7 @@ MonoBehaviour:
   acceleration: 8
   maxSpeed: 10
   forceMove: 1
+  mass: 1
 --- !u!114 &365799334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,9 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ecb47b205ac71f44b10a768310800ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hooker: {fileID: 365799332}
-  acceleration: 3
-  maxSpeed: 10
+  mass: 1
 --- !u!212 &526966367
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -760,6 +759,10 @@ Prefab:
       propertyPath: cooldownBar
       value: 
       objectReference: {fileID: 271481157}
+    - target: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
+      propertyPath: cableLength
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
   m_RootGameObject: {fileID: 1781429183}
@@ -811,3 +814,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   aim: {x: 0, y: 0}
+  cableLength: 10

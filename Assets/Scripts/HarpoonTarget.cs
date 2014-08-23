@@ -1,20 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HarpoonTarget : MonoBehaviour {
+public class HarpoonTarget : MonoBehaviour
+{
+	[SerializeField] int maxHarpoons = 1;
 
-	// Use this for initialization
-	void Start () {
-	
+	private int currentHarpoons;
+
+	void Awake()
+	{
+		currentHarpoons = 0;
 	}
 
-    public void Hit(HarpoonGun harpoon)
+    public bool Hit(HarpoonGun harpoon)
     {
-        Debug.Log("Harpoon Has Hit");
-    }
+		if(currentHarpoons == maxHarpoons)
+			return false;
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
+		//Attach a harpoon to the target
+		DistanceJoint2D joint = gameObject.AddComponent<DistanceJoint2D>();
+		joint.distance = harpoon.cableLength;
+		joint.maxDistanceOnly = true;
+		joint.connectedBody = PlayerController.player.rigidbody2D;
+		currentHarpoons++;
+		return true;
+    }
 }
