@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 93346489}
   - 212: {fileID: 93346490}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CooldownInside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - 4: {fileID: 271481156}
   - 212: {fileID: 271481158}
   - 114: {fileID: 271481157}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HarpoonCooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - 92: {fileID: 288146038}
   - 124: {fileID: 288146037}
   - 81: {fileID: 288146036}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 357506123}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,12 +314,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 365799332}
   - 50: {fileID: 365799331}
+  - 58: {fileID: 365799335}
   - 212: {fileID: 365799330}
   - 114: {fileID: 365799334}
   - 114: {fileID: 365799333}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,6 +374,7 @@ Transform:
   m_Children:
   - {fileID: 394394198}
   - {fileID: 288146040}
+  - {fileID: 1781429184}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &365799333
@@ -401,6 +403,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd88407c069c605418d2016eeee8bc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!58 &365799335
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 365799329}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .785000026
+  m_Center: {x: 0, y: 0}
 --- !u!1 &392168250
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +477,7 @@ GameObject:
   - 4: {fileID: 394394198}
   - 212: {fileID: 394394197}
   - 114: {fileID: 394394196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HarpoonControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,6 +580,10 @@ Prefab:
       propertyPath: harpoon
       value: 
       objectReference: {fileID: 1781429185}
+    - target: {fileID: 100000, guid: bb3f29c006ce10d499aaf2fed03ac50c, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb3f29c006ce10d499aaf2fed03ac50c, type: 2}
   m_RootGameObject: {fileID: 394394195}
@@ -649,7 +669,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &526966370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,6 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0db822efd59dd47ab86c76762c8343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHarpoons: 1
 --- !u!58 &526966371
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -711,17 +732,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
   m_RootGameObject: {fileID: 357506122}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1001 &926825393
+--- !u!1001 &1406190674
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 365799332}
     m_Modifications:
     - target: {fileID: 400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -753,16 +786,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
+      propertyPath: m_Name
+      value: HarpoonGun
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
       propertyPath: cooldownBar
       value: 
       objectReference: {fileID: 271481157}
-    - target: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
-      propertyPath: cableLength
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
   m_RootGameObject: {fileID: 1781429183}
@@ -772,13 +805,13 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
-  m_PrefabInternal: {fileID: 926825393}
+  m_PrefabInternal: {fileID: 1406190674}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1781429184}
   - 114: {fileID: 1781429185}
-  m_Layer: 0
-  m_Name: Harpoon
+  m_Layer: 10
+  m_Name: HarpoonGun
   m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -788,20 +821,20 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
-  m_PrefabInternal: {fileID: 926825393}
+  m_PrefabInternal: {fileID: 1406190674}
   m_GameObject: {fileID: 1781429183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 365799332}
   m_RootOrder: 2
 --- !u!114 &1781429185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e,
     type: 2}
-  m_PrefabInternal: {fileID: 926825393}
+  m_PrefabInternal: {fileID: 1406190674}
   m_GameObject: {fileID: 1781429183}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -815,3 +848,5 @@ MonoBehaviour:
     m_Bits: 512
   aim: {x: 0, y: 0}
   cableLength: 10
+  harpoonPrefab: {fileID: 5000000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
+  harpoonSpeed: 5

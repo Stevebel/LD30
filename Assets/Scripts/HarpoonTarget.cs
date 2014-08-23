@@ -25,4 +25,26 @@ public class HarpoonTarget : MonoBehaviour
 		currentHarpoons++;
 		return true;
     }
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if(currentHarpoons < maxHarpoons && collision.gameObject.tag == "Harpoon")
+		{
+			DistanceJoint2D joint = gameObject.AddComponent<DistanceJoint2D>();
+			joint.distance = HarpoonGun.gun.cableLength;
+			joint.maxDistanceOnly = true;
+			joint.connectedBody = PlayerController.player.rigidbody2D;
+
+			Vector2 point = Vector2.zero; 
+			foreach(ContactPoint2D contact in collision.contacts)
+				point += contact.point;
+			point /= collision.contacts.Length;
+			joint.anchor = point - rigidbody2D.position;
+
+			RaycastHit2D player = Physics2D.Raycast(point, PlayerController.player.rigidbody2D.position - point, Mathf.Infinity, PlayerController.player.playerLayer.value);
+			joint.connectedAnchor = player.point - PlayerController.player.rigidbody2D.position;
+
+			currentHarpoons++;
+		}
+	}
 }

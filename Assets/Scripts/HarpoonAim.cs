@@ -10,7 +10,8 @@ public class HarpoonAim : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate()
+	{
         Screen.showCursor = false;
         Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
