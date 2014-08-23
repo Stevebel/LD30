@@ -43,10 +43,11 @@ public class HarpoonGun : MonoBehaviour {
             harpoon.mass = .001f;
 
             //Create joint
-            SpringJoint2D joint = gameObject.AddComponent<SpringJoint2D>();
+            SpringJoint2D joint = harpoon.gameObject.AddComponent<SpringJoint2D>();
+			joint.anchor = new Vector2(0, -0.6f);
             joint.distance = cableLength;
             //joint.maxDistanceOnly = true;
-            joint.connectedBody = harpoon;
+            joint.connectedBody = rigidbody2D;
 
             //joint.anchor = collisionCenter - rigidbody2D.position;
 

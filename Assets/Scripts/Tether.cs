@@ -17,7 +17,8 @@ public class Tether : MonoBehaviour {
             line.SetVertexCount(segments + 1);
 
             Vector2 start = joint.connectedBody.position + joint.connectedAnchor;
-            Vector2 end = joint.rigidbody2D.position + (rotate(joint.anchor, joint.rigidbody2D.rotation));
+            //Vector2 end = joint.rigidbody2D.position + (rotate(joint.anchor, joint.rigidbody2D.rotation));
+			Vector2 end = joint.rigidbody2D.GetRelativePoint(joint.anchor / 2);
             Vector2 distance = (end - start);
             Vector2 direction = distance.normalized;
             Vector2 tangent = new Vector2(-direction.y, direction.x);
