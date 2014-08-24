@@ -8,7 +8,7 @@ Physics2DSettings:
   m_VelocityIterations: 8
   m_PositionIterations: 3
   m_VelocityThreshold: 1
-  m_MaxLinearCorrection: .200000003
+  m_MaxLinearCorrection: 1
   m_MaxAngularCorrection: 8
   m_MaxTranslationSpeed: 100
   m_MaxRotationSpeed: 360
@@ -19,4 +19,4 @@ Physics2DSettings:
   m_AngularSleepTolerance: 2
   m_RaycastsHitTriggers: 1
   m_DeleteStopsCallbacks: 1
-  m_LayerCollisionMatrix: ffefffffffefffffffefffffffffffffffefffffffefffffffffffffffffffffffefffffffffffffffe3ffffffe3ffffc8e2ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  m_LayerCollisionMatrix: ffefffffffefffffffefffffffffffffffefffffdfe0ffffffffffffffffffffdfefffffdfffffffdfe3ffffdfe3ffffc8e2ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff

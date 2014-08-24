@@ -27,6 +27,12 @@ public class HarpoonAim : MonoBehaviour {
 		harpoon.aim = new Vector2(mousePosition.x, mousePosition.y);
 
         if (Input.GetMouseButton(0))
-            harpoon.Shoot();
+        {
+            harpoon.Shoot(false);
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            harpoon.Shoot(true);
+        }
 	}
 }
