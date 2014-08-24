@@ -612,7 +612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 288146039}
   harpoon: {fileID: 1781429185}
-  turret: {fileID: 1637570876}
+  turret: {fileID: 1637570873}
 --- !u!212 &394394197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -706,7 +706,7 @@ Prefab:
     - target: {fileID: 11400000, guid: bb3f29c006ce10d499aaf2fed03ac50c, type: 2}
       propertyPath: turret
       value: 
-      objectReference: {fileID: 1637570876}
+      objectReference: {fileID: 1637570873}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb3f29c006ce10d499aaf2fed03ac50c, type: 2}
   m_RootGameObject: {fileID: 394394195}
@@ -1345,6 +1345,7 @@ MonoBehaviour:
   harpoonPrefab: {fileID: 5000000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
   harpoonSpeed: 10
   tetherPrefab: {fileID: 11400000, guid: e51e2b3aad93cfb4baa49937afd2aec9, type: 2}
+  harpoonSprite: {fileID: 1541631939}
 --- !u!50 &1781429186
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1569,6 +1570,10 @@ Prefab:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 365799331}
+    - target: {fileID: 11400000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
+      propertyPath: harpoonSprite
+      value: 
+      objectReference: {fileID: 1541631939}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d954d2b5d876a843889b0facc604d3e, type: 2}
   m_RootGameObject: {fileID: 1781429183}
