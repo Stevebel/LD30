@@ -24,10 +24,9 @@ public class HarpoonAim : MonoBehaviour {
 		Quaternion rotation = Quaternion.Euler(0, 0, angle);
 		turret.transform.rotation = rotation;
 
+		harpoon.aim = new Vector2(mousePosition.x, mousePosition.y);
+
         if (Input.GetMouseButton(0))
-        {
-            harpoon.aim = new Vector2(mousePosition.x, mousePosition.y);
             harpoon.Shoot();
-        }
 	}
 }

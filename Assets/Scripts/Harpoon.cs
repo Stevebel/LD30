@@ -13,7 +13,7 @@ public class Harpoon : MonoBehaviour
 		if(joint != null)
 		{
 			Debug.Log("joint");
-			if((rigidbody2D.position - joint.connectedBody.position).magnitude > joint.distance)
+			if((rigidbody2D.GetRelativePoint(joint.anchor) - joint.connectedBody.rigidbody2D.GetRelativePoint(joint.connectedAnchor)).magnitude > joint.distance)
 				joint.enabled = true;
 			else
 				joint.enabled = false;
