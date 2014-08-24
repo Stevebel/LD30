@@ -19,6 +19,7 @@ public class HarpoonGun : MonoBehaviour {
     private List<HarpoonTarget> currentlyAttached;
     private List<Tether> tethers;
     private Transform _transform;
+	[SerializeField] SpriteRenderer harpoonSprite;
 
 	public static HarpoonGun gun;
 
@@ -100,10 +101,12 @@ public class HarpoonGun : MonoBehaviour {
     {
         return cooldownRemaining <= 0.00001f;
     }
+
     public bool AttachedToTarget()
     {
         return currentlyAttached.Count > 0;
     }
+
     void ReleaseHarpoons()
     {
         foreach (HarpoonTarget target in currentlyAttached)
@@ -126,6 +129,7 @@ public class HarpoonGun : MonoBehaviour {
         }
         tethers.Clear();
     }
+
     void Update()
     {
         if (Input.GetButton("ReleaseHarpoon"))
@@ -133,16 +137,20 @@ public class HarpoonGun : MonoBehaviour {
             ReleaseHarpoons();
         }
     }
+
 	void FixedUpdate()
 	{
 		if (cooldownRemaining > 0)
 		{
+			harpoonSprite.enabled = false;
 			cooldownRemaining -= Time.deltaTime;
 			if (cooldownRemaining < 0)
 			{
 				cooldownRemaining = 0;
 			}
 		}
+		else
+			harpoonSprite.enabled = true;
 		
 		float cooldownPercent = (cooldownSecs - cooldownRemaining) / cooldownSecs;
 		
