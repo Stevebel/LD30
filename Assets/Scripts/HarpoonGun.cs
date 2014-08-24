@@ -19,6 +19,8 @@ public class HarpoonGun : MonoBehaviour {
 
 	public static HarpoonGun gun;
 
+	private float playerSize;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -26,6 +28,8 @@ public class HarpoonGun : MonoBehaviour {
 
 		if(gun != this)
 			gun = this;
+
+		playerSize = PlayerController.player.GetComponent<SpriteRenderer>().sprite.bounds.extents.x;
     }
 
     public void Shoot()
@@ -34,7 +38,7 @@ public class HarpoonGun : MonoBehaviour {
         {
             cooldownRemaining = cooldownSecs;
 
-            float angle = Mathf.Atan2(_transform.position.y - aim.y, _transform.position.x - aim.x) * 180/Mathf.PI + 90;
+            float angle = Mathf.Atan2(_transform.position.y - aim.y, _transform.position.x - aim.x) * 180 / Mathf.PI + 90;
             Quaternion rotation = Quaternion.Euler(0, 0, angle);
 
             Rigidbody2D harpoon = Instantiate(harpoonPrefab, _transform.position, rotation) as Rigidbody2D;
@@ -57,8 +61,7 @@ public class HarpoonGun : MonoBehaviour {
             tether.transform.parent = harpoon.transform;
         }
     }
-
-
+	
     public bool CanShoot()
     {
         return cooldownRemaining <= 0.00001f;
@@ -79,5 +82,17 @@ public class HarpoonGun : MonoBehaviour {
         float cooldownPercent = (cooldownSecs - cooldownRemaining) / cooldownSecs;
 
         cooldownBar.percent = cooldownPercent;
+
+		Vector2 direction = new Vector2(aim.x, aim.y).normalized;
+		Rigidbody2D playerbody = PlayerController.player.rigidbody2D;
+		float angle = Vector2.Angle(playerbody.GetRelativePoint(direction), playerbody.GetRelativePoint(rigidbody2D.position));
+		Debug.Log(angle);
+		if(angle > 90)
+		{
+			Vector3 cross = Vector3.Cross(playerbody.GetRelativePoint(direction), playerbody.GetRelativePoint(rigidbody2D.position));
+			float sign = Mathf.Sign(cross.z);
+
+			transform.RotateAround(PlayerController.player.transform.position, Vector3.forward, (90 - angle) * sign);
+		}
 	}
 }
