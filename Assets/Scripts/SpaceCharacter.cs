@@ -15,7 +15,6 @@ public class SpaceCharacter : MonoBehaviour
 
 	public void Move(float horiz, float vert)
 	{
-        Debug.Log(horiz+","+vert);
 		if(forceMove)
 			ForceMove (horiz, vert);
 		else
