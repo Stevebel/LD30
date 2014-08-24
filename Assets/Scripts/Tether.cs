@@ -6,8 +6,10 @@ public class Tether : MonoBehaviour {
     public int segments = 10;
     public LineRenderer line;
     private static TetherCollider[] colliders;
+
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
         line = GetComponent<LineRenderer>();
 	}
 
@@ -15,6 +17,7 @@ public class Tether : MonoBehaviour {
     {
         return (joint is SpringJoint2D) ? (joint as SpringJoint2D).distance : (joint as DistanceJoint2D).distance;
     }
+
 	// Update is called once per frame
 	void Update () {
         if (joint != null)
