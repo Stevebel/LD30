@@ -107,6 +107,11 @@ public class HarpoonGun : MonoBehaviour {
         return currentlyAttached.Count > 0;
     }
 
+    public bool TakeTether(Tether tether)
+    {
+        return tethers.Remove(tether);
+    }
+
     void ReleaseHarpoons()
     {
         foreach (HarpoonTarget target in currentlyAttached)
