@@ -4,6 +4,16 @@ using System.Collections;
 public class Harpoon : MonoBehaviour
 {
 	private SpringJoint2D joint;
+	[SerializeField] float lifespan = 1;
+	private float timeLeft;
+
+	public bool tethered;
+
+	void Awake()
+	{
+		timeLeft = lifespan;
+		tethered = false;
+	}
 
 	void FixedUpdate()
 	{
@@ -17,5 +27,10 @@ public class Harpoon : MonoBehaviour
 			else
 				joint.enabled = false;
 		}
+
+		if(!tethered)
+			timeLeft -= Time.fixedDeltaTime;
+		if(timeLeft <= 0)
+			Destroy(gameObject);
 	}
 }

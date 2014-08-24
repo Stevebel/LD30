@@ -60,6 +60,8 @@ public class HarpoonGun : MonoBehaviour {
                 tether.joint = joint;
                 tether.transform.parent = harpoon.transform;
                 tethers.Add(tether);
+
+				harpoon.gameObject.GetComponent<Harpoon>().tethered = true;
             }
         }
     }
@@ -108,7 +110,11 @@ public class HarpoonGun : MonoBehaviour {
         foreach (Tether tether in tethers)
         {
             tether.joint.enabled = false;
-            Destroy(tether.joint);
+			if(tether.joint != null)
+			{
+				tether.joint.gameObject.GetComponent<Harpoon>().tethered = false;
+            	Destroy(tether.joint);
+			}
             Destroy(tether.gameObject);
         }
         tethers.Clear();
