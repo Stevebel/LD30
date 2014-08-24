@@ -32,7 +32,7 @@ public class SpaceCharacter : MonoBehaviour
 		Vector2 velocity = rigidbody2D.velocity;
 		velocity.x = Mathf.Clamp (velocity.x, -maxSpeed, maxSpeed);
 		velocity.y = Mathf.Clamp (velocity.y, -maxSpeed, maxSpeed);
-		//rigidbody2D.velocity = velocity;
+		rigidbody2D.velocity = velocity;
 	}
 
 	public void Rotate(Quaternion rotation)
