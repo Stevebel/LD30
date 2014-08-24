@@ -1352,6 +1352,7 @@ MonoBehaviour:
   harpoonPrefab: {fileID: 5000000, guid: 7f4a47d40b6cb504882754428a15e0e0, type: 2}
   harpoonSpeed: 10
   tetherPrefab: {fileID: 11400000, guid: e51e2b3aad93cfb4baa49937afd2aec9, type: 2}
+  harpoonSprite: {fileID: 1541631939}
 --- !u!50 &1781429186
 Rigidbody2D:
   m_ObjectHideFlags: 0
