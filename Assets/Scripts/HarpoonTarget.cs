@@ -4,10 +4,10 @@ using System.Collections;
 public class HarpoonTarget : MonoBehaviour
 {
 	[SerializeField] int maxHarpoons = 1;
-    [SerializeField]
-    Tether tetherPrefab;
+    [SerializeField] Tether tetherPrefab;
 
-	private int currentHarpoons;
+	public int currentHarpoons;
+
 	void Awake()
 	{
 		currentHarpoons = 0;

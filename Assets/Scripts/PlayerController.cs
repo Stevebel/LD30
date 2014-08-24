@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(SpaceCharacter))]
 public class PlayerController : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
 	{
 		player = this;
 		character = GetComponent<SpaceCharacter> ();
+		TetherDestroyer.destroyers = new List<TetherDestroyer>();
 	}
 
 	void FixedUpdate()

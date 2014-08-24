@@ -76,18 +76,36 @@ public class Tether : MonoBehaviour {
                     }
                 }
             }
-        }
-	}
 
-    void LateUpdate()
-    {
-        colliders = null;
-    }
-    Vector2 rotate(Vector2 v, float angle)
-    {
-        angle *= Mathf.PI / 180;
-        float x = v.x * Mathf.Cos(angle) - v.y * Mathf.Sin(angle);
-        float y = v.x * Mathf.Sin(angle) + v.y * Mathf.Cos(angle);
+			foreach(TetherDestroyer destroyer in TetherDestroyer.destroyers)
+			{
+				Collider2D otherCollider = destroyer.collider2D;
+				
+				float radius = otherCollider.bounds.extents.magnitude + tetherRadius;
+				if ((otherCollider.bounds.center - center).magnitude <= radius)
+				{
+					//Check if any segment overlaps
+					for (int i = 0; i <= segments; i++)
+					{
+						if (otherCollider.OverlapPoint(positions[i]))
+						{
+							destroyer.OnTetherCollision(this, i);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	void LateUpdate()
+	{
+		colliders = null;
+	}
+	Vector2 rotate(Vector2 v, float angle)
+	{
+		angle *= Mathf.PI / 180;
+		float x = v.x * Mathf.Cos(angle) - v.y * Mathf.Sin(angle);
+		float y = v.x * Mathf.Sin(angle) + v.y * Mathf.Cos(angle);
         v.x = x;
         v.y = y;
         return v;

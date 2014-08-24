@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
 
 	private float cooldownLeft = 0;
 	private int clockwise;
+	private TargetPlanet owner;
 
 	private int currentHealth;
 
@@ -42,7 +43,10 @@ public class EnemyController : MonoBehaviour
 			currentHealth--;
 
 		if(currentHealth <= 0)
+		{
+			owner.Deregister(this);
 			Destroy(gameObject);
+		}
 	}
 
 	void FixedUpdate()
@@ -68,5 +72,10 @@ public class EnemyController : MonoBehaviour
 			Shoot();
 			cooldownLeft = cooldown;
 		}
+	}
+
+	public void RegisterOwner(TargetPlanet planet)
+	{
+		owner = planet;
 	}
 }
