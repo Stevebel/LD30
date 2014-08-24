@@ -45,7 +45,7 @@ public class HarpoonGun : MonoBehaviour {
             Rigidbody2D harpoon = Instantiate(harpoonPrefab, _transform.position, rotation) as Rigidbody2D;
 
             harpoon.velocity = harpoon.transform.up * harpoonSpeed;
-            harpoon.mass = .001f;
+            harpoon.mass = 10f;
 
             //Create joint
             SpringJoint2D joint = harpoon.gameObject.AddComponent<SpringJoint2D>();
@@ -93,7 +93,10 @@ public class HarpoonGun : MonoBehaviour {
     {
         return cooldownRemaining <= 0.00001f;
     }
-
+    public bool AttachedToTarget()
+    {
+        return currentlyAttached.Count > 0;
+    }
     void ReleaseHarpoons()
     {
         foreach (HarpoonTarget target in currentlyAttached)
