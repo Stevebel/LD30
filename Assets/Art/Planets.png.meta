@@ -3,6 +3,7 @@ guid: 129f94522b216ab4b9dec15fb9786cc5
 TextureImporter:
   fileIDToRecycleName:
     21300000: HomePlanet
+    21300002: TargetPlanet
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +39,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 675
+  spritePixelsToUnits: 340
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -48,9 +49,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 983
-        width: 1061
-        height: 1065
+        y: 1516
+        width: 532
+        height: 532
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TargetPlanet
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1516
+        width: 546
+        height: 532
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
