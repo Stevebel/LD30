@@ -45,6 +45,9 @@ public class HarpoonGun : MonoBehaviour {
             Rigidbody2D harpoon = Instantiate(harpoonPrefab, _transform.position, rotation) as Rigidbody2D;
 
             harpoon.velocity = harpoon.transform.up * harpoonSpeed;
+            Vector2 oppositeForce = harpoon.velocity * harpoon.mass * (withTether ? -10f : -1f);
+            PlayerController.player.rigidbody2D.AddForce(oppositeForce, ForceMode2D.Impulse);
+            harpoon.velocity += PlayerController.player.rigidbody2D.velocity;
             harpoon.mass = 10f;
 
             if (withTether)
@@ -53,6 +56,8 @@ public class HarpoonGun : MonoBehaviour {
                 SpringJoint2D joint = harpoon.gameObject.AddComponent<SpringJoint2D>();
                 joint.anchor = new Vector2(0, -0.6f);
                 joint.distance = cableLength;
+                joint.frequency = 2f;
+                joint.dampingRatio = 1f;
                 joint.connectedBody = rigidbody2D;
 
                 //Add tether
