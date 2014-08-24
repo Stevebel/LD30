@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class HarpoonGun : MonoBehaviour {
     public ProgressBar cooldownBar;
@@ -15,6 +16,8 @@ public class HarpoonGun : MonoBehaviour {
 
     private float cooldownRemaining;
     private GameObject[] targetable;
+    private List<HarpoonTarget> currentlyAttached;
+    private List<Tether> tethers;
     private Transform _transform;
 
 	public static HarpoonGun gun;
@@ -23,6 +26,8 @@ public class HarpoonGun : MonoBehaviour {
 	void Start ()
 	{
         _transform = transform;
+        currentlyAttached = new List<HarpoonTarget>();
+        tethers = new List<Tether>();
 
 		if(gun != this)
 			gun = this;
@@ -55,21 +60,68 @@ public class HarpoonGun : MonoBehaviour {
             Tether tether = Instantiate(tetherPrefab) as Tether;
             tether.joint = joint;
             tether.transform.parent = harpoon.transform;
+            tethers.Add(tether);
         }
     }
 
+    public bool Attach(HarpoonTarget target, GameObject harpoon, Vector2 anchor)
+    {
+        Tether tether = harpoon.GetComponentInChildren<Tether>();
+        if (tether != null)
+        {
+            //Create joint
+            DistanceJoint2D joint = target.gameObject.AddComponent<DistanceJoint2D>();
+            joint.distance = cableLength;
+            joint.maxDistanceOnly = true;
+            joint.connectedBody = rigidbody2D;
+
+            joint.anchor = anchor;
+
+            //Move tether
+            tether.joint = joint;
+            tether.transform.parent = target.transform;
+
+            Destroy(harpoon);
+
+            currentlyAttached.Add(target);
+            return true;
+        }
+        return false;
+    }
 
     public bool CanShoot()
     {
         return cooldownRemaining <= 0.00001f;
     }
 
-	// Update is called once per frame
+    void ReleaseHarpoons()
+    {
+        foreach (HarpoonTarget target in currentlyAttached)
+        {
+            target.Detach();
+        }
+        currentlyAttached.Clear();
+
+        foreach (Tether tether in tethers)
+        {
+            tether.joint.enabled = false;
+            Destroy(tether.joint);
+            Destroy(tether.gameObject);
+        }
+        tethers.Clear();
+    }
+    void Update()
+    {
+        if (Input.GetButton("ReleaseHarpoon"))
+        {
+            ReleaseHarpoons();
+        }
+    }
 	void FixedUpdate()
 	{
         if (cooldownRemaining > 0)
         {
-            cooldownRemaining -= Time.deltaTime;
+            cooldownRemaining -= Time.fixedDeltaTime;
             if (cooldownRemaining < 0)
             {
                 cooldownRemaining = 0;

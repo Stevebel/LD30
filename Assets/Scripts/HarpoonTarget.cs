@@ -13,20 +13,10 @@ public class HarpoonTarget : MonoBehaviour
 		currentHarpoons = 0;
 	}
 
-    public bool Hit(HarpoonGun harpoon)
+    public void Detach()
     {
-		if(currentHarpoons == maxHarpoons)
-			return false;
-
-		//Attach a harpoon to the target
-		DistanceJoint2D joint = gameObject.AddComponent<DistanceJoint2D>();
-		joint.distance = harpoon.cableLength;
-		joint.maxDistanceOnly = true;
-		joint.connectedBody = PlayerController.player.rigidbody2D;
-		currentHarpoons++;
-		return true;
+        currentHarpoons = 0;
     }
-
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if(collision.gameObject.tag == "Harpoon")
@@ -34,32 +24,15 @@ public class HarpoonTarget : MonoBehaviour
             
             if (currentHarpoons < maxHarpoons)
             {
-                //Create joint
-                DistanceJoint2D joint = gameObject.AddComponent<DistanceJoint2D>();
-                joint.distance = HarpoonGun.gun.cableLength;
-                joint.maxDistanceOnly = true;
-                joint.connectedBody = HarpoonGun.gun.rigidbody2D;
-
                 Vector2 collisionCenter = Vector2.zero;
                 foreach (ContactPoint2D contact in collision.contacts)
                     collisionCenter += contact.point;
                 collisionCenter /= collision.contacts.Length;
-                joint.anchor = collisionCenter - rigidbody2D.position;
+                Vector2 anchor = collisionCenter - rigidbody2D.position;
 
-                //Draw tether
-                Tether tether = collision.gameObject.GetComponentInChildren<Tether>();//Instantiate(tetherPrefab) as Tether;
-                tether.joint = joint;
-                tether.transform.parent = transform;
-
-
-
-                //RaycastHit2D player = Physics2D.Raycast(collisionCenter, PlayerController.player.rigidbody2D.position - collisionCenter, Mathf.Infinity, PlayerController.player.playerLayer.value);
-                //joint.connectedAnchor = player.point - PlayerController.player.rigidbody2D.position;
-
-                //Destroy harpoon
-                Destroy(collision.gameObject);
-
-                currentHarpoons++;
+                if (HarpoonGun.gun.Attach(this, collision.gameObject, anchor)) {
+                    currentHarpoons++;
+                }
             }
 		}
 	}
