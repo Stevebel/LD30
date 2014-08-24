@@ -119,17 +119,29 @@ public class HarpoonGun : MonoBehaviour {
     }
 	void FixedUpdate()
 	{
-        if (cooldownRemaining > 0)
-        {
-            cooldownRemaining -= Time.fixedDeltaTime;
-            if (cooldownRemaining < 0)
-            {
-                cooldownRemaining = 0;
-            }
-        }
-        
-        float cooldownPercent = (cooldownSecs - cooldownRemaining) / cooldownSecs;
-
-        cooldownBar.percent = cooldownPercent;
+		if (cooldownRemaining > 0)
+		{
+			cooldownRemaining -= Time.deltaTime;
+			if (cooldownRemaining < 0)
+			{
+				cooldownRemaining = 0;
+			}
+		}
+		
+		float cooldownPercent = (cooldownSecs - cooldownRemaining) / cooldownSecs;
+		
+		cooldownBar.percent = cooldownPercent;
+		
+		Vector2 direction = new Vector2(aim.x, aim.y).normalized;
+		Rigidbody2D playerbody = PlayerController.player.rigidbody2D;
+		float angle = Vector2.Angle(playerbody.GetRelativePoint(direction), playerbody.GetRelativePoint(rigidbody2D.position));
+		Debug.Log(angle);
+		if(angle > 90)
+		{
+			Vector3 cross = Vector3.Cross(playerbody.GetRelativePoint(direction), playerbody.GetRelativePoint(rigidbody2D.position));
+			float sign = Mathf.Sign(cross.z);
+			
+			transform.RotateAround(PlayerController.player.transform.position, Vector3.forward, (90 - angle) * sign);
+		}
 	}
 }
