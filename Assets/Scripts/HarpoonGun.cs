@@ -19,7 +19,6 @@ public class HarpoonGun : MonoBehaviour {
     private List<HarpoonTarget> currentlyAttached;
     private List<Tether> tethers;
     private Transform _transform;
-	[SerializeField] SpriteRenderer harpoonSprite;
 
 	public static HarpoonGun gun;
 
@@ -101,12 +100,10 @@ public class HarpoonGun : MonoBehaviour {
     {
         return cooldownRemaining <= 0.00001f;
     }
-
     public bool AttachedToTarget()
     {
         return currentlyAttached.Count > 0;
     }
-
     void ReleaseHarpoons()
     {
         foreach (HarpoonTarget target in currentlyAttached)
@@ -129,7 +126,6 @@ public class HarpoonGun : MonoBehaviour {
         }
         tethers.Clear();
     }
-
     void Update()
     {
         if (Input.GetButton("ReleaseHarpoon"))
@@ -137,20 +133,16 @@ public class HarpoonGun : MonoBehaviour {
             ReleaseHarpoons();
         }
     }
-
 	void FixedUpdate()
 	{
 		if (cooldownRemaining > 0)
 		{
-			harpoonSprite.enabled = false;
 			cooldownRemaining -= Time.deltaTime;
 			if (cooldownRemaining < 0)
 			{
 				cooldownRemaining = 0;
 			}
 		}
-		else
-			harpoonSprite.enabled = true;
 		
 		float cooldownPercent = (cooldownSecs - cooldownRemaining) / cooldownSecs;
 		
@@ -159,12 +151,12 @@ public class HarpoonGun : MonoBehaviour {
 		Vector2 direction = new Vector2(aim.x, aim.y);
 		Rigidbody2D playerbody = PlayerController.player.rigidbody2D;
 		float angle = Vector2.Angle(direction - playerbody.position, rigidbody2D.position - playerbody.position);
-		if(angle > 90)
+		if(angle > 60)
 		{
 			Vector3 cross = Vector3.Cross(direction - playerbody.position, rigidbody2D.position - playerbody.position);
 			float sign = Mathf.Sign(cross.z);
 			
-			transform.RotateAround(PlayerController.player.transform.position, Vector3.forward, (90 - angle) * sign);
+			transform.RotateAround(PlayerController.player.transform.position, Vector3.forward, (60 - angle) * sign);
 		}
 	}
 }

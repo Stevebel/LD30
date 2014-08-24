@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Parking : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
 	
@@ -16,5 +15,10 @@ public class Parking : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("Parked");
+        SpriteRenderer[] innerSprites = GetComponentsInChildren<SpriteRenderer>();//.enabled = true;
+        foreach (SpriteRenderer sprite in innerSprites)
+        {
+            sprite.enabled = true;
+        }
     }
 }

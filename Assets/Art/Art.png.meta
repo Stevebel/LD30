@@ -14,6 +14,7 @@ TextureImporter:
     21300018: HarpoonGun
     21300020: Harpoon
     21300022: Arrow
+    21300024: ParkingGlow
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -172,6 +173,16 @@ TextureImporter:
         y: 685
         width: 106
         height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ParkingGlow
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 168
+        width: 176
+        height: 228
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
