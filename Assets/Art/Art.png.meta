@@ -15,6 +15,7 @@ TextureImporter:
     21300020: Harpoon
     21300022: Arrow
     21300024: ParkingGlow
+    21300026: Anchor
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -183,6 +184,16 @@ TextureImporter:
         y: 168
         width: 176
         height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Anchor
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 346
+        width: 44
+        height: 43
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

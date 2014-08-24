@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class HarpoonAim : MonoBehaviour {
-    public Camera camera;
     public HarpoonGun harpoon;
 	[SerializeField] Transform turret;
 
@@ -16,7 +15,7 @@ public class HarpoonAim : MonoBehaviour {
 	void FixedUpdate()
 	{
         Screen.showCursor = false;
-        Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
         transform.position = mousePosition;
 
