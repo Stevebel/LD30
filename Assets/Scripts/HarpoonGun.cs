@@ -55,8 +55,8 @@ public class HarpoonGun : MonoBehaviour {
             harpoon.velocity += PlayerController.player.rigidbody2D.velocity;
             harpoon.mass = 10f;
 
-			audio.clip = shootSound[Random.Range (0, shootSound.Length)];
-			audio.Play ();
+			Camera.main.audio.clip = shootSound[Random.Range (0, shootSound.Length)];
+			Camera.main.audio.Play ();
 
             if (withTether)
             {

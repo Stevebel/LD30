@@ -72,13 +72,15 @@ public class HarpoonTarget : MonoBehaviour
 				}
 				else
 				{
-					Score.score.AddScore(damageCostMultiplier * -5f * Random.Range(0.8f,1.2f), collisionCenter, angle);
+					Score.score.AddScore(damageCostMultiplier * -5f * Random.Range(0.8f, 1.2f), collisionCenter, angle);
 					audio.clip = harpoonHit;
 					audio.Play ();
 				}
             }
 		}
-		else if(collision.gameObject.renderer.isVisible)
+		else if(collision.gameObject.tag == "Rock" && collision.gameObject.renderer.isVisible)
+			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier, collisionCenter, angle);
+		else
 			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier, collisionCenter, angle);
 	}
 
