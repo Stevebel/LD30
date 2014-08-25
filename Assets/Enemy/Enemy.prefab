@@ -134,6 +134,7 @@ MonoBehaviour:
   orbitAngle: 1
   cooldown: 2
   fireRange: 15
+  explosionPrefab: {fileID: 100002, guid: d3e0d9dd3a0bb4bf4815b26939dce392, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

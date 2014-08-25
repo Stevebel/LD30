@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
 	[SerializeField] float orbitAngle;
 	[SerializeField] float cooldown;
 	[SerializeField] float fireRange;
+	[SerializeField] GameObject explosionPrefab;
 
 	private float cooldownLeft = 0;
 	private int clockwise;
@@ -45,6 +46,7 @@ public class EnemyController : MonoBehaviour
 		if(currentHealth <= 0)
 		{
 			owner.Deregister(this);
+			Instantiate (explosionPrefab, transform.position, transform.rotation);
 			Destroy(gameObject);
 		}
 	}
