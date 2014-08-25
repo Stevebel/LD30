@@ -9,9 +9,6 @@ public class TetherDestroyer : TetherCollider
 
 	void Awake()
 	{
-		if(destroyers.Count == 0)
-			destroyers = new List<TetherDestroyer>();
-		destroyers.Add(this);
 	}
 
 	void FixedUpdate()

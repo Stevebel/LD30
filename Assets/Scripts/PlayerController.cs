@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
 	{
 		player = this;
 		character = GetComponent<SpaceCharacter> ();
-		TetherDestroyer.destroyers = new List<TetherDestroyer>();
 	}
 
 	void FixedUpdate()
