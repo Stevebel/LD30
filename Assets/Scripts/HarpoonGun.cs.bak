@@ -132,15 +132,7 @@ public class HarpoonGun : MonoBehaviour {
 
         foreach (Tether tether in tethers)
         {
-            tether.joint.enabled = false;
-			if(tether.joint != null)
-			{
-				Harpoon harpoon = tether.joint.gameObject.GetComponent<Harpoon>();
-				if(harpoon != null)
-					harpoon.tethered = false;
-            	Destroy(tether.joint);
-			}
-            Destroy(tether.gameObject);
+            DestroyTether(tether);
         }
         tethers.Clear();
     }
