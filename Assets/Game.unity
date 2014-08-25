@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 100
   maxEnemies: 3
-  cooldown: 15
+  cooldown: 1
   spawnRange: 10
   enemyPrefab: {fileID: 11400000, guid: 6b6f7c99c5d1c654f985d51f1cd73089, type: 2}
 --- !u!212 &526966367
@@ -1185,6 +1185,7 @@ MonoBehaviour:
   maxHarpoons: 3
   tetherPrefab: {fileID: 11400000, guid: e51e2b3aad93cfb4baa49937afd2aec9, type: 2}
   currentHarpoons: 0
+  attachedAnchors: []
 --- !u!58 &526966371
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1197,6 +1198,49 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .790000021
   m_Center: {x: 0, y: 0}
+--- !u!1 &613849224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 613849226}
+  - 114: {fileID: 613849225}
+  m_Layer: 0
+  m_Name: PlanetSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &613849225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613849224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9eb6c31958c014381ed88a82a89291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetPrefab: {fileID: 526966366}
+  minRadius: 5
+  maxRadius: 390
+  origin: {fileID: 898956018}
+--- !u!4 &613849226
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613849224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1001 &665715247
 Prefab:
   m_ObjectHideFlags: 0
@@ -3000,6 +3044,10 @@ Prefab:
     - target: {fileID: 400000, guid: 0f785501b2d912941b1f4a27dc656968, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0f785501b2d912941b1f4a27dc656968, type: 2}
+      propertyPath: cooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f785501b2d912941b1f4a27dc656968, type: 2}

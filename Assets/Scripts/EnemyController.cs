@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
 	void Awake()
 	{
 		currentHealth = maxHealth;
-		clockwise = Random.Range(0, 1);
+		clockwise = Random.Range(0, 2);
 		if(clockwise == 0)
 			clockwise--;
 	}
