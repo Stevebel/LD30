@@ -768,7 +768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 8
-  maxSpeed: 10
+  maxSpeed: 6
   forceMove: 1
   mass: 100
 --- !u!114 &365799334
@@ -1212,7 +1212,7 @@ GameObject:
   m_Layer: 0
   m_Name: PlanetSpawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1227,9 +1227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9eb6c31958c014381ed88a82a89291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetPrefab: {fileID: 526966366}
+  planetPrefab: {fileID: 11400000, guid: 0f785501b2d912941b1f4a27dc656968, type: 2}
   minRadius: 5
-  maxRadius: 390
+  maxRadius: 100
   origin: {fileID: 898956018}
 --- !u!4 &613849226
 Transform:
@@ -1238,7 +1238,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 613849224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.19000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

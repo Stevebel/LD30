@@ -130,7 +130,7 @@ MonoBehaviour:
   enemyLaserPrefab: {fileID: 5000000, guid: afd09858120798b4fbcf484dcb41092a, type: 2}
   laserSpeed: 10
   maxHealth: 1
-  orbitDistance: 10
+  orbitDistance: 7
   orbitAngle: 1
   cooldown: 2
   fireRange: 15

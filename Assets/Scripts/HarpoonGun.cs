@@ -208,7 +208,7 @@ public class HarpoonGun : MonoBehaviour {
                 if (tether.joint.connectedBody.gameObject == gameObject)
                 {
                     float distance = (tether.endPoint - tether.startPoint).magnitude;
-                    if (distance > tether.GetJointDistance() * 1.1)
+                    if (distance > tether.GetJointDistance() * 1.2)
                     {
                         currentlyAttached[i].Detach();
                         DestroyTether(tether);

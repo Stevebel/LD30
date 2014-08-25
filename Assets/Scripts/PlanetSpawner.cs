@@ -18,6 +18,8 @@ public class PlanetSpawner : MonoBehaviour
 		planets = new List<TargetPlanet>();
 		if(spawner != this)
 			spawner = this;
+
+		SpawnPlanets (1);
 	}
 
 	void SpawnPlanets(int numPlanets)

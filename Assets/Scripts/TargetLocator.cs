@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TargetLocator : MonoBehaviour {
-    public static List<HarpoonTarget> targets;
-    private Transform _transform;
+    public static List<HarpoonTarget> targets = new List<HarpoonTarget>();
+    private Transform _transform; 
     private SpriteRenderer sprite;
 	// Use this for initialization
 	void Start () {
