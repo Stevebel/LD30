@@ -15,8 +15,8 @@ public class Score : MonoBehaviour {
 		text = GetComponent<TextMesh> ();
 	}
 
-	void AddScore(float amount){
-		value += amount * multiplier;
+	public void AddScore(float amount){
+		value += amount;
 	}
 	// Update is called once per frame
 	void Update () {

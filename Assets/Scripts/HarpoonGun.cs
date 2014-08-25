@@ -11,6 +11,7 @@ public class HarpoonGun : MonoBehaviour {
 
 	[SerializeField] Rigidbody2D harpoonPrefab;
 	[SerializeField] float harpoonSpeed;
+	[SerializeField] float harpoonCost = 1;
 
     [SerializeField] Tether tetherPrefab;
 
@@ -38,6 +39,7 @@ public class HarpoonGun : MonoBehaviour {
     {
         if (CanShoot())
         {
+			Score.score.AddScore(-harpoonCost);
             cooldownRemaining = cooldownSecs;
 
             float angle = Mathf.Atan2(_transform.position.y - aim.y, _transform.position.x - aim.x) * 180 / Mathf.PI + 90;
@@ -117,7 +119,6 @@ public class HarpoonGun : MonoBehaviour {
 			foreach(Tether t in ts)
 	            if (tether == t)
 	            {
-	                Debug.Log("Grabbed");
 	                currentlyAttached.RemoveAt(i);
 					i = currentlyAttached.Count;
 	                break;
@@ -200,7 +201,8 @@ public class HarpoonGun : MonoBehaviour {
 		}
 
         //Break attached tethers if they're stretched too far
-        for (int i = currentlyAttached.Count - 1; i >= 0; i--)
+        /*
+		for (int i = currentlyAttached.Count - 1; i >= 0; i--)
         {
             Tether[] attTethers = currentlyAttached[i].GetComponentsInChildren<Tether>();
             foreach (Tether tether in attTethers)
@@ -219,5 +221,6 @@ public class HarpoonGun : MonoBehaviour {
                 }
             }
         }
+        */
 	}
 }

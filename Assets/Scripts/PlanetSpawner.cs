@@ -8,6 +8,7 @@ public class PlanetSpawner : MonoBehaviour
 	[SerializeField] float minRadius;
 	[SerializeField] float maxRadius;
 	[SerializeField] Transform origin;
+	[SerializeField] float captureReward = 50;
 
 	private List<TargetPlanet> planets;
 	private int capturedCount;
@@ -53,13 +54,13 @@ public class PlanetSpawner : MonoBehaviour
 		float angle = Random.Range (0, 2 * Mathf.PI);
 		float distance = Random.Range (minRadius, maxRadius);
 		transform.position = new Vector3(Mathf.Cos (angle) * distance, Mathf.Sin (angle) * distance, 0) + origin.position;
-		Debug.Log (transform.position);
 		planets.Add (Instantiate(planetPrefab, transform.position, transform.rotation) as TargetPlanet);
 	}
 
 	public void Deregister(TargetPlanet planet)
 	{
 		planets.Remove (planet);
+		Score.score.AddScore (50);
 
 		capturedCount++;
 		SpawnNeeded ();

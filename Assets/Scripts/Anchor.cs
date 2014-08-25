@@ -24,9 +24,9 @@ public class Anchor : TetherCollider
 	            //Create joint
 				SpringJoint2D joint = gameObject.AddComponent<SpringJoint2D>();
 				joint.distance = tether.GetJointDistance() * ((float)(numSegments - segment) / numSegments);
-	            if (joint.distance < 1)
+	            if (joint.distance < 2)
 	            {
-                    joint.distance = 1;
+                    joint.distance = 2;
 	            }
 				joint.dampingRatio = 1;
 	            joint.connectedBody = tether.joint.rigidbody2D;

@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CooldownInside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200002}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HarpoonCooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,8 +41,26 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400006}
+  - 114: {fileID: 11400002}
+  - 23: {fileID: 2300000}
+  - 102: {fileID: 10200000}
+  m_Layer: 5
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,8 +85,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.91550922, y: -4.23493004, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.82758617, y: -4.3908453, z: 10}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 400000}
   m_Father: {fileID: 400004}
@@ -80,12 +98,66 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.490224838, y: -.27234745, z: 0}
+  m_LocalPosition: {x: 1.07242227, y: .134619713, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
+  - {fileID: 400006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &400006
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.1875782, y: 4.05538034, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400004}
+  m_RootOrder: 1
+--- !u!23 &2300000
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 1ca2009fd26314cc0a482ead2e37f50e, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!102 &10200000
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Text: $1,000,000
+  m_OffsetZ: 0
+  m_CharacterSize: .200000003
+  m_LineSpacing: 1
+  m_Anchor: 2
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 0
+  m_Font: {fileID: 12800000, guid: 1ca2009fd26314cc0a482ead2e37f50e, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +171,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   percent: 1
   inside: {fileID: 100000}
+  fullSprite: {fileID: 21300010, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
+  partialSprite: {fileID: 21300008, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8677cce65a3c438990870c183a813de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positiveColor: {r: .717647076, g: 1, b: .576470613, a: 1}
+  negativeColor: {r: 1, g: .556862772, b: .556862772, a: 1}
+  multiplier: 1e+06
+  value: 50
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -119,7 +208,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 110759133
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300008, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
+  m_Sprite: {fileID: 21300010, guid: 67619aa66eaf1e647a1c3e49a9611a0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200002
 SpriteRenderer:

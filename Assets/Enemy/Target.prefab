@@ -38,7 +38,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mass: 100000
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -88,6 +88,7 @@ MonoBehaviour:
   maxHarpoons: 3
   tetherPrefab: {fileID: 11400000, guid: e51e2b3aad93cfb4baa49937afd2aec9, type: 2}
   flarePrefab: {fileID: 11400000, guid: 0ac53a594a4c2420982f877e49310386, type: 2}
+  damageCostMultiplier: .100000001
   currentHarpoons: 0
   attachedAnchors: []
   timeToDie: 0

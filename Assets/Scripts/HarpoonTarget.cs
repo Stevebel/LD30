@@ -7,6 +7,7 @@ public class HarpoonTarget : MonoBehaviour
 	[SerializeField] int maxHarpoons = 1;
     [SerializeField] Tether tetherPrefab;
 	[SerializeField] FlareController flarePrefab;
+	[SerializeField] float damageCostMultiplier = 0.1f;
 
 	public int currentHarpoons;
     public List<Anchor> attachedAnchors;
@@ -57,8 +58,12 @@ public class HarpoonTarget : MonoBehaviour
                 if (HarpoonGun.gun.Attach(this, collision.gameObject, anchor))
 				{
                     currentHarpoons++;
-                }
+                }else{
+					Score.score.AddScore(damageCostMultiplier * -5f * Random.Range(0.8f,1.2f));
+				}
             }
+		}else{
+			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier);
 		}
 	}
 
