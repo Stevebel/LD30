@@ -8,6 +8,7 @@ public class HarpoonTarget : MonoBehaviour
     [SerializeField] Tether tetherPrefab;
 	[SerializeField] FlareController flarePrefab;
 	[SerializeField] float damageCostMultiplier = 0.1f;
+	[SerializeField] AudioClip harpoonHit;
 
 	public int currentHarpoons;
     public List<Anchor> attachedAnchors;
@@ -60,15 +61,23 @@ public class HarpoonTarget : MonoBehaviour
 		   angle = 315;
 
 		if(collision.gameObject.tag == "Harpoon")
+		{
             if (currentHarpoons < maxHarpoons)
             {
                 Vector2 anchor = collisionCenter - rigidbody2D.position;
 
                 if (HarpoonGun.gun.Attach(this, collision.gameObject, anchor))
+				{
                     currentHarpoons++;
+				}
 				else
+				{
 					Score.score.AddScore(damageCostMultiplier * -5f * Random.Range(0.8f,1.2f), collisionCenter, angle);
+					audio.clip = harpoonHit;
+					audio.Play ();
+				}
             }
+		}
 		else if(collision.gameObject.renderer.isVisible)
 			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier, collisionCenter, angle);
 	}

@@ -21,6 +21,7 @@ public class HarpoonGun : MonoBehaviour {
     private List<Tether> tethers;
     private Transform _transform;
 	[SerializeField] SpriteRenderer harpoonSprite;
+	[SerializeField] AudioClip[] shootSound;
 
 	public static HarpoonGun gun;
 
@@ -53,6 +54,9 @@ public class HarpoonGun : MonoBehaviour {
             PlayerController.player.rigidbody2D.AddForce(oppositeForce, ForceMode2D.Impulse);
             harpoon.velocity += PlayerController.player.rigidbody2D.velocity;
             harpoon.mass = 10f;
+
+			audio.clip = shootSound[Random.Range (0, shootSound.Length)];
+			audio.Play ();
 
             if (withTether)
             {

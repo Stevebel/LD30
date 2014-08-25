@@ -9,23 +9,13 @@ public class PlayerController : MonoBehaviour
 
 	public LayerMask playerLayer;
 
-	[SerializeField] AudioSource music;
-
 	public static PlayerController player;
-
-	private static AudioSource musicCheck;
 
 	void Awake()
 	{
 		player = this;
 		character = GetComponent<SpaceCharacter> ();
 		Random.seed = (int)Time.time;
-		DontDestroyOnLoad(music);
-
-		if(musicCheck == null)
-			musicCheck = music;
-		if(music != musicCheck)
-			Destroy (music.gameObject);
 	}
 
 	void FixedUpdate()
