@@ -36,7 +36,7 @@ public class Score : MonoBehaviour
 			point.color = negativeColor;
 			point.text = "-";
 		}
-		point.text += "$" + (int)Mathf.Abs(amount * multiplier);
+		point.text += "$" + ((int)Mathf.Abs(amount * multiplier)).ToString("N0");
 		
 	}
 

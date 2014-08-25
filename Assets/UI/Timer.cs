@@ -31,6 +31,6 @@ public class Timer : MonoBehaviour
 		}
 
 		int minutesLeft = (int)(secondsLeft / 60f);
-		text.text = minutesLeft + ":" + (secondsLeft % 60f).ToString ("N2");
+		text.text = minutesLeft + ":" + (secondsLeft % 60f).ToString ("00.##");
 	}
 }
