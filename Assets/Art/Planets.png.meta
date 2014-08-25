@@ -8,6 +8,7 @@ TextureImporter:
     21300006: SawProjectile
     21300008: EnemyTop
     21300010: EnemyBottom
+    21300012: Rock
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -106,6 +107,16 @@ TextureImporter:
         y: 1399
         width: 240
         height: 260
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rock
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1067
+        width: 426
+        height: 417
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
