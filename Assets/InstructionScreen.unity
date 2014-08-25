@@ -74,6 +74,156 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &59577442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 59577445}
+  - 23: {fileID: 59577444}
+  - 102: {fileID: 59577443}
+  m_Layer: 0
+  m_Name: Instructions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &59577443
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 10200000, guid: ae054a2767893d04d9a8d3473bf77db9,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 59577442}
+  m_Text: "Some people just can't pay their debts, so their homes\r\nhave been foreclosed.
+    It's up to one intrepid space trucker\r\n(planet) to repo these home (planets).\r\n\r\nGoal\r\nTow
+    as many planets as you can to the parking space and\r\nanchor it there. Watch
+    out, some (all) people will try to\r\nstop you repoing their planet.\r\n\r\nControls\r\nWASD
+    - Move\r\nMouse 1/Left Ctrl - Fire a harpoon (due to a legal loophole,\r\n this
+    is a legitimate form of self-defense!)\r\nMouse 2/Left Shift - Fire a tethered
+    harpoon (great for\r\n towing planets)\r\nSpace - Detach all harpoons"
+  m_OffsetZ: 0
+  m_CharacterSize: .200000003
+  m_LineSpacing: 1
+  m_Anchor: 1
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 12
+  m_FontStyle: 0
+  m_RichText: 0
+  m_Font: {fileID: 12800000, guid: d0771b253426fa243b337e680737d7c8, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288657977
+--- !u!23 &59577444
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: ae054a2767893d04d9a8d3473bf77db9,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 59577442}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: d0771b253426fa243b337e680737d7c8, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &59577445
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 59577442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.6118145, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+--- !u!1 &71560368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 71560371}
+  - 23: {fileID: 71560370}
+  - 102: {fileID: 71560369}
+  m_Layer: 0
+  m_Name: Instruction title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &71560369
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 10200000, guid: ae054a2767893d04d9a8d3473bf77db9,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71560368}
+  m_Text: Instructions
+  m_OffsetZ: 0
+  m_CharacterSize: .200000003
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 20
+  m_FontStyle: 0
+  m_RichText: 0
+  m_Font: {fileID: 12800000, guid: d0771b253426fa243b337e680737d7c8, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288657977
+--- !u!23 &71560370
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: ae054a2767893d04d9a8d3473bf77db9,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71560368}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: d0771b253426fa243b337e680737d7c8, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &71560371
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71560368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.00854683, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1001 &157724664
 Prefab:
   m_ObjectHideFlags: 0
@@ -418,7 +568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &608664963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1907,7 +2057,7 @@ MonoBehaviour:
   normalSprite: {fileID: 21300002, guid: 812c00b978b21f2448672b37ef4c2658, type: 3}
   overSprite: {fileID: 21300004, guid: 812c00b978b21f2448672b37ef4c2658, type: 3}
   pressSprite: {fileID: 21300006, guid: 812c00b978b21f2448672b37ef4c2658, type: 3}
-  gameScene: InstructionScreen
+  gameScene: Game
 --- !u!212 &1627153227
 SpriteRenderer:
   m_ObjectHideFlags: 0
