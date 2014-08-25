@@ -71,8 +71,8 @@ public class HarpoonTarget : MonoBehaviour
 	{
 		FlareController flare = Instantiate (flarePrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), Quaternion.identity) as FlareController;
 		TargetLocator.targets.Remove (this);
-		//PlanetSpawner.spawner.Deregister(GetComponent<TargetPlanet>());
-		Invoke ("Die", flare.particleSystem.duration * 5);
+		PlanetSpawner.spawner.Deregister(GetComponent<TargetPlanet>());
+		Invoke ("Die", flare.particleSystem.duration);
 	}
 
 	void FixedUpdate()

@@ -17,7 +17,6 @@ public class Tether : MonoBehaviour {
 
 	void OnDestroy()
 	{
-		Debug.Log ("OnDestroy");
 		HarpoonGun.gun.TakeTether (this);	
 	}
 

@@ -45,7 +45,8 @@ public class HarpoonGun : MonoBehaviour {
 
             Rigidbody2D harpoon = Instantiate(harpoonPrefab, _transform.position, rotation) as Rigidbody2D;
 
-            harpoon.velocity = harpoon.transform.up * harpoonSpeed;
+            harpoon.velocity = harpoon.transform.up * harpoonSpeed * (withTether ? 1 : 2);
+			harpoon.transform.localScale = (withTether) ? new Vector3(0.5f,0.5f,0.5f) : Vector3.one;
             Vector2 oppositeForce = harpoon.velocity * harpoon.mass * (withTether ? -10f : -1f);
             PlayerController.player.rigidbody2D.AddForce(oppositeForce, ForceMode2D.Impulse);
             harpoon.velocity += PlayerController.player.rigidbody2D.velocity;
@@ -109,7 +110,6 @@ public class HarpoonGun : MonoBehaviour {
 
     public bool TakeTether(Tether tether)
     {
-		Debug.Log (currentlyAttached.Count);
         for(int i=0; i < currentlyAttached.Count; i++)
         {
             HarpoonTarget target = currentlyAttached[i];

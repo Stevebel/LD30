@@ -10,11 +10,14 @@ public class PlanetSpawner : MonoBehaviour
 	[SerializeField] Transform origin;
 
 	private List<TargetPlanet> planets;
+	private int capturedCount;
 
 	public static PlanetSpawner spawner;
 
 	void Awake()
 	{
+		Random.seed = (int)System.DateTime.Now.Ticks;
+
 		planets = new List<TargetPlanet>();
 		if(spawner != this)
 			spawner = this;
@@ -32,6 +35,7 @@ public class PlanetSpawner : MonoBehaviour
 
 	void SpawnPlanet()
 	{
+		/*
 		float xDistance = Random.Range (minRadius, maxRadius);
 		int sign = Random.Range (0, 2);
 		if(sign < 1)
@@ -43,7 +47,9 @@ public class PlanetSpawner : MonoBehaviour
 			sign--;
 		yDistance *= sign;
 
-		//transform.position = new Vector3(xDistance, yDistance, 0) + origin.position;
+		transform.position = new Vector3(xDistance, yDistance, 0) + origin.position;
+		*/
+
 		float angle = Random.Range (0, 2 * Mathf.PI);
 		float distance = Random.Range (minRadius, maxRadius);
 		transform.position = new Vector3(Mathf.Cos (angle) * distance, Mathf.Sin (angle) * distance, 0) + origin.position;
@@ -54,5 +60,14 @@ public class PlanetSpawner : MonoBehaviour
 	public void Deregister(TargetPlanet planet)
 	{
 		planets.Remove (planet);
+
+		capturedCount++;
+		SpawnNeeded ();
+	}
+	private static float LOG_2 = Mathf.Log(2);
+	void SpawnNeeded(){
+		int countForLevel = (int)Mathf.Round(Mathf.Log (capturedCount + 1) / LOG_2) + 1;
+		int needed = countForLevel - planets.Count;
+		SpawnPlanets (needed);
 	}
 }
