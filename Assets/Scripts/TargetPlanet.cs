@@ -7,6 +7,7 @@ public class TargetPlanet : MonoBehaviour
 	[SerializeField] float mass = 1;
 	[SerializeField] int maxEnemies;
 	[SerializeField] float cooldown;
+	[SerializeField] float spawnRange;
 	[SerializeField] EnemyController enemyPrefab;
 
 	private float cooldownLeft;
@@ -26,7 +27,7 @@ public class TargetPlanet : MonoBehaviour
 		if(cooldownLeft > 0)
 			cooldownLeft -= Time.fixedDeltaTime;
 
-		if(cooldownLeft <= 0 && numEnemies < maxEnemies)
+		if(cooldownLeft <= 0 && numEnemies < maxEnemies && (rigidbody2D.position - PlayerController.player.rigidbody2D.position).magnitude < spawnRange)
 		{
 			EnemyController enemy = Instantiate(enemyPrefab, transform.position, transform.rotation) as EnemyController;
 			enemy.RegisterOwner(this);
