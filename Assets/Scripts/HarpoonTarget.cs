@@ -9,9 +9,11 @@ public class HarpoonTarget : MonoBehaviour
 
 	public int currentHarpoons;
 
+    public List<Anchor> attachedAnchors;
 	void Awake()
 	{
 		currentHarpoons = 0;
+        attachedAnchors = new List<Anchor>();
 
         if (TargetLocator.targets == null)
         {
@@ -23,6 +25,14 @@ public class HarpoonTarget : MonoBehaviour
     public void Detach()
     {
         currentHarpoons = 0;
+    }
+    public void AttachToAnchor(Anchor anchor)
+    {
+        attachedAnchors.Add(anchor);
+    }
+    bool TargetSecured()
+    {
+        return attachedAnchors.Count >= 3;
     }
 	void OnCollisionEnter2D(Collision2D collision)
 	{

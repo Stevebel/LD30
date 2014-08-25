@@ -12,7 +12,8 @@ public class Anchor : TetherCollider
 
     override public void OnTetherCollision(Tether tether, int segment)
     {
-        if (tether.joint.gameObject != gameObject && tether.joint.gameObject.GetComponent<HarpoonTarget>() != null)
+        HarpoonTarget harpoonTarget = tether.joint.gameObject.GetComponent<HarpoonTarget>();
+        if (harpoonTarget != null)
         {
 			Rigidbody2D target = tether.joint.gameObject.rigidbody2D;
 			if(!targets.Contains(target))
@@ -25,8 +26,8 @@ public class Anchor : TetherCollider
 				joint.distance = tether.GetJointDistance() * ((float)(numSegments - segment) / numSegments);
 	            if (joint.distance < 1)
 	            {
+                    joint.distance = 1;
 	            }
-	            //joint.maxDistanceOnly = true;
 				joint.dampingRatio = 1;
 	            joint.connectedBody = tether.joint.rigidbody2D;
 
@@ -36,7 +37,7 @@ public class Anchor : TetherCollider
 	            //Move tether
 	            tether.joint = joint;
 	            //tether.transform.parent = target.transform;
-
+                harpoonTarget.AttachToAnchor(this);
 				targets.Add(target);
 			}
         }
