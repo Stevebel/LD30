@@ -5,16 +5,17 @@ using System.Collections.Generic;
 public class TetherDestroyer : TetherCollider
 {
 	public static List<TetherDestroyer> destroyers;
-	
 
-	void Awake()
+	private Renderer childRenderer;
+
+	void Start()
 	{
+		childRenderer = GetComponentInChildren<Renderer>();
 	}
 
 	void FixedUpdate()
 	{
-		Vector2 viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
-		if(viewportPosition.x < 0 || viewportPosition.x > 1 || viewportPosition.y < 0 || viewportPosition.y > 1)
+		if(!childRenderer.isVisible)
 			Destroy(gameObject);
 	}
 

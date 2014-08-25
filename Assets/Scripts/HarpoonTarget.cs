@@ -69,7 +69,7 @@ public class HarpoonTarget : MonoBehaviour
 				else
 					Score.score.AddScore(damageCostMultiplier * -5f * Random.Range(0.8f,1.2f), collisionCenter, angle);
             }
-		else
+		else if(collision.gameObject.renderer.isVisible)
 			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier, collisionCenter, angle);
 	}
 

@@ -36,21 +36,6 @@ public class PlanetSpawner : MonoBehaviour
 
 	void SpawnPlanet()
 	{
-		/*
-		float xDistance = Random.Range (minRadius, maxRadius);
-		int sign = Random.Range (0, 2);
-		if(sign < 1)
-			sign--;
-		xDistance *= sign;
-		float yDistance = Random.Range (minRadius, maxRadius);
-		sign = Random.Range (0, 2);
-		if(sign < 1)
-			sign--;
-		yDistance *= sign;
-
-		transform.position = new Vector3(xDistance, yDistance, 0) + origin.position;
-		*/
-
 		float angle = Random.Range (0, 2 * Mathf.PI);
 		float distance = Random.Range (minRadius, maxRadius);
 		transform.position = new Vector3(Mathf.Cos (angle) * distance, Mathf.Sin (angle) * distance, 0) + origin.position;
