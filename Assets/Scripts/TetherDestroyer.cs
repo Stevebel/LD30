@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class TetherDestroyer : TetherCollider
 {
-	public static List<TetherDestroyer> destroyers;
-
 	private Renderer childRenderer;
 
 	void Start()
@@ -32,10 +30,5 @@ public class TetherDestroyer : TetherCollider
 			harpoon.tethered = false;
 		Destroy(tether.joint);
 		Destroy(tether.gameObject);
-	}
-
-	void OnDestroy()
-	{
-		destroyers.Remove(this);
 	}
 }

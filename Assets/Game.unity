@@ -1265,7 +1265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsLeft: 120
-  gameOver: {fileID: 0}
+  gameOver: {fileID: 1731364877}
 --- !u!102 &473754871
 TextMesh:
   serializedVersion: 3
@@ -1817,7 +1817,7 @@ Prefab:
     - target: {fileID: 11400006, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
       propertyPath: gameOver
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1731364877}
     - target: {fileID: 400010, guid: ae054a2767893d04d9a8d3473bf77db9, type: 2}
       propertyPath: m_LocalPosition.x
       value: -7.47332764
