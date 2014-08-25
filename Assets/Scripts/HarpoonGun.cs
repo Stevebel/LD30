@@ -109,16 +109,6 @@ public class HarpoonGun : MonoBehaviour {
 
     public bool TakeTether(Tether tether)
     {
-        for(int i=0; i < currentlyAttached.Count; i++)
-        {
-            HarpoonTarget target = currentlyAttached[i];
-            if (tether == target.GetComponentInChildren<Tether>())
-            {
-                Debug.Log("Grabbed");
-                currentlyAttached.RemoveAt(i);
-                break;
-            }
-        }
         return tethers.Remove(tether);
     }
 
@@ -132,22 +122,17 @@ public class HarpoonGun : MonoBehaviour {
 
         foreach (Tether tether in tethers)
         {
-            DestroyTether(tether);
+            tether.joint.enabled = false;
+			if(tether.joint != null)
+			{
+				Harpoon harpoon = tether.joint.gameObject.GetComponent<Harpoon>();
+				if(harpoon != null)
+					harpoon.tethered = false;
+            	Destroy(tether.joint);
+			}
+            Destroy(tether.gameObject);
         }
         tethers.Clear();
-    }
-
-    private void DestroyTether(Tether tether)
-    {
-        tether.joint.enabled = false;
-        if (tether.joint != null)
-        {
-            Harpoon harpoon = tether.joint.gameObject.GetComponent<Harpoon>();
-            if (harpoon != null)
-                harpoon.tethered = false;
-            Destroy(tether.joint);
-        }
-        Destroy(tether.gameObject);
     }
 
     void Update()
@@ -186,26 +171,5 @@ public class HarpoonGun : MonoBehaviour {
 			
 			transform.RotateAround(PlayerController.player.transform.position, Vector3.forward, (60 - angle) * sign);
 		}
-
-        //Break attached tethers if they're stretched too far
-        for (int i = currentlyAttached.Count - 1; i >= 0; i--)
-        {
-            Tether[] attTethers = currentlyAttached[i].GetComponentsInChildren<Tether>();
-            foreach (Tether tether in attTethers)
-            {
-                if (tether.joint.connectedBody.gameObject == gameObject)
-                {
-                    float distance = (tether.endPoint - tether.startPoint).magnitude;
-                    if (distance > tether.GetJointDistance() * 1.1)
-                    {
-                        currentlyAttached[i].Detach();
-                        DestroyTether(tether);
-                        tethers.Remove(tether);
-                        currentlyAttached.RemoveAt(i);
-                    }
-                    break;
-                }
-            }
-        }
 	}
 }
