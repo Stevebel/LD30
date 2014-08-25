@@ -5,6 +5,8 @@ public class Tether : MonoBehaviour {
     public AnchoredJoint2D joint;
     public int segments = 10;
     public LineRenderer line;
+    public Vector2 startPoint;
+    public Vector2 endPoint;
     private static TetherCollider[] colliders;
 
 	// Use this for initialization
@@ -76,6 +78,14 @@ public class Tether : MonoBehaviour {
                     }
                 }
             }
+<<<<<<< HEAD
+=======
+            //Set start and end
+            startPoint = positions[0];
+            endPoint = positions[segments];
+        }
+	}
+>>>>>>> origin/master
 
 			foreach(TetherDestroyer destroyer in TetherDestroyer.destroyers)
 			{
