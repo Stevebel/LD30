@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class HarpoonTarget : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class HarpoonTarget : MonoBehaviour
 	void Awake()
 	{
 		currentHarpoons = 0;
+
+        if (TargetLocator.targets == null)
+        {
+            TargetLocator.targets = new List<HarpoonTarget>();
+        }
+        TargetLocator.targets.Add(this);
 	}
 
     public void Detach()

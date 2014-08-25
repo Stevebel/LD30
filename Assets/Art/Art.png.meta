@@ -16,6 +16,7 @@ TextureImporter:
     21300022: Arrow
     21300024: ParkingGlow
     21300026: Anchor
+    21300028: PlanetArrow
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -194,6 +195,16 @@ TextureImporter:
         y: 346
         width: 44
         height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlanetArrow
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 582
+        width: 61
+        height: 74
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
