@@ -79,7 +79,7 @@ public class Tether : MonoBehaviour {
                     }
                 }
             }
-
+            /*
 			foreach(TetherDestroyer destroyer in TetherDestroyer.destroyers)
 			{
 				Collider2D otherCollider = destroyer.collider2D;
@@ -97,7 +97,7 @@ public class Tether : MonoBehaviour {
 					}
 				}
 			}
-
+            */
 			//Set start and end
             startPoint = positions[0];
             endPoint = positions[segments];

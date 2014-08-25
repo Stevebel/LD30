@@ -4,6 +4,10 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: HomePlanet
     21300002: TargetPlanet
+    21300004: Saw
+    21300006: SawProjectile
+    21300008: EnemyTop
+    21300010: EnemyBottom
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -62,6 +66,46 @@ TextureImporter:
         y: 1516
         width: 546
         height: 532
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Saw
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 1783
+        width: 293
+        height: 189
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SawProjectile
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 1516
+        width: 293
+        height: 192
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: EnemyTop
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 1669
+        width: 269
+        height: 379
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: EnemyBottom
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 1399
+        width: 240
+        height: 260
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
