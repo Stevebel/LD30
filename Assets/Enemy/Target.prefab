@@ -72,7 +72,7 @@ MonoBehaviour:
   mass: 100
   maxEnemies: 3
   cooldown: 15
-  spawnRange: 0
+  spawnRange: 10
   enemyPrefab: {fileID: 11400000, guid: 6b6f7c99c5d1c654f985d51f1cd73089, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:

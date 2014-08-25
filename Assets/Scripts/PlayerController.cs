@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 	{
 		player = this;
 		character = GetComponent<SpaceCharacter> ();
+		Random.seed = (int)Time.time;
 	}
 
 	void FixedUpdate()
