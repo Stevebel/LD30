@@ -109,15 +109,19 @@ public class HarpoonGun : MonoBehaviour {
 
     public bool TakeTether(Tether tether)
     {
+		Debug.Log (currentlyAttached.Count);
         for(int i=0; i < currentlyAttached.Count; i++)
         {
             HarpoonTarget target = currentlyAttached[i];
-            if (tether == target.GetComponentInChildren<Tether>())
-            {
-                Debug.Log("Grabbed");
-                currentlyAttached.RemoveAt(i);
-                break;
-            }
+			Tether[] ts = target.GetComponentsInChildren<Tether>();
+			foreach(Tether t in ts)
+	            if (tether == t)
+	            {
+	                Debug.Log("Grabbed");
+	                currentlyAttached.RemoveAt(i);
+					i = currentlyAttached.Count;
+	                break;
+	            }
         }
         return tethers.Remove(tether);
     }

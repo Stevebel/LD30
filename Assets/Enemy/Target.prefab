@@ -87,7 +87,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHarpoons: 3
   tetherPrefab: {fileID: 11400000, guid: e51e2b3aad93cfb4baa49937afd2aec9, type: 2}
+  flarePrefab: {fileID: 11400000, guid: 0ac53a594a4c2420982f877e49310386, type: 2}
   currentHarpoons: 0
+  attachedAnchors: []
+  timeToDie: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

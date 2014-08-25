@@ -48,4 +48,9 @@ public class PlanetSpawner : MonoBehaviour
 		Debug.Log (transform.position);
 		planets.Add (Instantiate(planetPrefab, transform.position, transform.rotation) as TargetPlanet);
 	}
+
+	public void Deregister(TargetPlanet planet)
+	{
+		planets.Remove (planet);
+	}
 }

@@ -15,6 +15,12 @@ public class Tether : MonoBehaviour {
         line = GetComponent<LineRenderer>();
 	}
 
+	void OnDestroy()
+	{
+		Debug.Log ("OnDestroy");
+		HarpoonGun.gun.TakeTether (this);	
+	}
+
     public float GetJointDistance()
     {
         return (joint is SpringJoint2D) ? (joint as SpringJoint2D).distance : (joint as DistanceJoint2D).distance;

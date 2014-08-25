@@ -1101,7 +1101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &526966366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 100
-  maxEnemies: 3
+  maxEnemies: 0
   cooldown: 1
   spawnRange: 10
   enemyPrefab: {fileID: 11400000, guid: 6b6f7c99c5d1c654f985d51f1cd73089, type: 2}
@@ -1184,8 +1184,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHarpoons: 3
   tetherPrefab: {fileID: 11400000, guid: e51e2b3aad93cfb4baa49937afd2aec9, type: 2}
+  flarePrefab: {fileID: 11400000, guid: 0ac53a594a4c2420982f877e49310386, type: 2}
   currentHarpoons: 0
   attachedAnchors: []
+  timeToDie: 0
 --- !u!58 &526966371
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3048,6 +3050,19 @@ Prefab:
     - target: {fileID: 11400000, guid: 0f785501b2d912941b1f4a27dc656968, type: 2}
       propertyPath: cooldown
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 0f785501b2d912941b1f4a27dc656968, type: 2}
+      propertyPath: maxEnemies
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 0f785501b2d912941b1f4a27dc656968, type: 2}
+      propertyPath: flarePrefab
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ac53a594a4c2420982f877e49310386,
+        type: 2}
+    - target: {fileID: 100000, guid: 0f785501b2d912941b1f4a27dc656968, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f785501b2d912941b1f4a27dc656968, type: 2}
