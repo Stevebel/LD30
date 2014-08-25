@@ -37,7 +37,7 @@ public class HarpoonGun : MonoBehaviour {
 
     public void Shoot(bool withTether)
     {
-        if (CanShoot())
+        if (CanShoot() && Time.timeScale != 0)
         {
 			Score.score.AddScore(-harpoonCost);
             cooldownRemaining = cooldownSecs;

@@ -1,18 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Timer : MonoBehaviour {
+public class Timer : MonoBehaviour
+{
 	public float secondsLeft = 120;
 	private TextMesh text;
+	[SerializeField] GameObject gameOver;
+
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		text = GetComponent<TextMesh> ();
+		gameOver.SetActive (false);
 	}
-	void TimerEnded(){
+
+	void TimerEnded()
+	{
 		Debug.Log ("Game over");
+		Time.timeScale = 0;
+		gameOver.SetActive (true);
 	}
+
 	// Update is called once per frame
-	void Update (){
+	void Update ()
+	{
 		secondsLeft -= Time.deltaTime;
 		if (secondsLeft < 0) {
 			secondsLeft = 0;

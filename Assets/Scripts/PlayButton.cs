@@ -34,6 +34,7 @@ public class PlayButton : MonoBehaviour {
     void OnMouseUp()
     {
         sprite.sprite = overSprite;
+		Time.timeScale = 1;
         Application.LoadLevel(gameScene);
     }
 }
