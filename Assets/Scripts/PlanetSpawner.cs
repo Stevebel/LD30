@@ -9,6 +9,7 @@ public class PlanetSpawner : MonoBehaviour
 	[SerializeField] float maxRadius;
 	[SerializeField] Transform origin;
 	[SerializeField] float captureReward = 50;
+	[SerializeField] AudioClip[] captureSound;
 
 	private List<TargetPlanet> planets;
 	private int capturedCount;
@@ -46,6 +47,8 @@ public class PlanetSpawner : MonoBehaviour
 	{
 		planets.Remove (planet);
 		Score.score.AddScore (captureReward, planet.transform.position, 0);
+		Camera.main.audio.clip = captureSound[Random.Range (0, captureSound.Length)];
+		Camera.main.audio.Play ();
 
 		capturedCount++;
 		SpawnNeeded ();

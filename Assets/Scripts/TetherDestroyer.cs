@@ -34,7 +34,7 @@ public class TetherDestroyer : TetherCollider
 		Destroy(tether.gameObject);
 	}
 
-	~TetherDestroyer()
+	void OnDestroy()
 	{
 		destroyers.Remove(this);
 	}

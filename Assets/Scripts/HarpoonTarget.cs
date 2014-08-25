@@ -8,7 +8,8 @@ public class HarpoonTarget : MonoBehaviour
     [SerializeField] Tether tetherPrefab;
 	[SerializeField] FlareController flarePrefab;
 	[SerializeField] float damageCostMultiplier = 0.1f;
-	[SerializeField] AudioClip harpoonHit;
+	[SerializeField] AudioClip[] harpoonHitSound;
+	[SerializeField] AudioClip[] tetherSound;
 
 	public int currentHarpoons;
     public List<Anchor> attachedAnchors;
@@ -69,11 +70,13 @@ public class HarpoonTarget : MonoBehaviour
                 if (HarpoonGun.gun.Attach(this, collision.gameObject, anchor))
 				{
                     currentHarpoons++;
+					audio.clip = tetherSound[Random.Range (0, tetherSound.Length)];
+					audio.Play ();
 				}
 				else
 				{
 					Score.score.AddScore(damageCostMultiplier * -5f * Random.Range(0.8f, 1.2f), collisionCenter, angle);
-					audio.clip = harpoonHit;
+					audio.clip = harpoonHitSound[Random.Range (0, harpoonHitSound.Length)];
 					audio.Play ();
 				}
             }
