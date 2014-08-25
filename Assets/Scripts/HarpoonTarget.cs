@@ -44,27 +44,33 @@ public class HarpoonTarget : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.gameObject.tag == "Harpoon")
+		Vector2 collisionCenter = Vector2.zero;
+		Vector2 normalCenter = Vector2.zero;
+		foreach (ContactPoint2D contact in collision.contacts)
 		{
-            
+			collisionCenter += contact.point;
+			normalCenter += contact.normal;
+		}
+		collisionCenter /= collision.contacts.Length;
+		normalCenter /= collision.contacts.Length;
+		float angle = Mathf.Atan2(normalCenter.y, normalCenter.x) * 180 / Mathf.PI;
+		if(angle > 45 && angle < 180)
+			angle = 45;
+		if(angle < 315 && angle >= 180)
+		   angle = 315;
+
+		if(collision.gameObject.tag == "Harpoon")
             if (currentHarpoons < maxHarpoons)
             {
-                Vector2 collisionCenter = Vector2.zero;
-                foreach (ContactPoint2D contact in collision.contacts)
-                    collisionCenter += contact.point;
-                collisionCenter /= collision.contacts.Length;
                 Vector2 anchor = collisionCenter - rigidbody2D.position;
 
                 if (HarpoonGun.gun.Attach(this, collision.gameObject, anchor))
-				{
                     currentHarpoons++;
-                }else{
-					Score.score.AddScore(damageCostMultiplier * -5f * Random.Range(0.8f,1.2f));
-				}
+				else
+					Score.score.AddScore(damageCostMultiplier * -5f * Random.Range(0.8f,1.2f), collisionCenter, angle);
             }
-		}else{
-			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier);
-		}
+		else
+			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier, collisionCenter, angle);
 	}
 
 	void Die()

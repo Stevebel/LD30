@@ -31,7 +31,7 @@ public class HarpoonGun : MonoBehaviour {
         currentlyAttached = new List<HarpoonTarget>();
         tethers = new List<Tether>();
 
-		if(gun != this)
+		//if(gun != this)
 			gun = this;
     }
 

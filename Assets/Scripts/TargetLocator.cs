@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TargetLocator : MonoBehaviour {
-    public static List<HarpoonTarget> targets = new List<HarpoonTarget>();
+	public static List<HarpoonTarget> targets;
     private Transform _transform; 
     private SpriteRenderer sprite;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         _transform = transform;
         sprite = GetComponentInChildren<SpriteRenderer>();
+		targets = new List<HarpoonTarget>();
 	}
 	
 	// Update is called once per frame

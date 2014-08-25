@@ -102,7 +102,8 @@ TextMesh:
   m_Text: "Some people just can't pay their debts, so their homes\r\nhave been foreclosed.
     It's up to one intrepid space trucker\r\n(planet) to repo these home (planets).\r\n\r\nGoal\r\nTow
     as many planets as you can to the parking space and\r\nanchor it there. Watch
-    out, some (all) people will try to\r\nstop you repoing their planet.\r\n\r\nControls\r\nWASD
+    out, some (all) people will try to\r\nstop you repoing their planet. You'll have
+    to pay for any\r\ndamages to the planet you make on collection so be careful.\r\n\r\nControls\r\nWASD
     - Move\r\nMouse 1/Left Ctrl - Fire a harpoon (due to a legal loophole,\r\n this
     is a legitimate form of self-defense!)\r\nMouse 2/Left Shift - Fire a tethered
     harpoon (great for\r\n towing planets)\r\nSpace - Detach all harpoons"
@@ -112,7 +113,7 @@ TextMesh:
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 12
+  m_FontSize: 11
   m_FontStyle: 0
   m_RichText: 0
   m_Font: {fileID: 12800000, guid: d0771b253426fa243b337e680737d7c8, type: 3}

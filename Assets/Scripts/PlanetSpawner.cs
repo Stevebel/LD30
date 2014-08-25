@@ -20,7 +20,7 @@ public class PlanetSpawner : MonoBehaviour
 		Random.seed = (int)System.DateTime.Now.Ticks;
 
 		planets = new List<TargetPlanet>();
-		if(spawner != this)
+		//if(spawner != this)
 			spawner = this;
 
 		SpawnPlanets (1);
@@ -60,7 +60,7 @@ public class PlanetSpawner : MonoBehaviour
 	public void Deregister(TargetPlanet planet)
 	{
 		planets.Remove (planet);
-		Score.score.AddScore (50);
+		Score.score.AddScore (captureReward, planet.transform.position, 0);
 
 		capturedCount++;
 		SpawnNeeded ();
