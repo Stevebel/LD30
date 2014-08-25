@@ -21,7 +21,8 @@ public class Tether : MonoBehaviour {
     }
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate ()
+	{
         if (joint != null)
         {
             line.SetVertexCount(segments + 1);
@@ -79,12 +80,6 @@ public class Tether : MonoBehaviour {
                 }
             }
 
-		//Set start and end
-            startPoint = positions[0];
-            endPoint = positions[segments];
-        }
-
-
 			foreach(TetherDestroyer destroyer in TetherDestroyer.destroyers)
 			{
 				Collider2D otherCollider = destroyer.collider2D;
@@ -102,6 +97,10 @@ public class Tether : MonoBehaviour {
 					}
 				}
 			}
+
+			//Set start and end
+            startPoint = positions[0];
+            endPoint = positions[segments];
 		}
 	}
 
