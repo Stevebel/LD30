@@ -12,7 +12,7 @@ public class HarpoonAim : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate()
+	void Update()
 	{
         Screen.showCursor = false;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -25,11 +25,11 @@ public class HarpoonAim : MonoBehaviour {
 
 		harpoon.aim = new Vector2(mousePosition.x, mousePosition.y);
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetButtonDown("Fire"))
         {
             harpoon.Shoot(false);
         }
-        else if (Input.GetMouseButton(1))
+		else if (Input.GetButtonDown("FireTethered"))
         {
             harpoon.Shoot(true);
         }
