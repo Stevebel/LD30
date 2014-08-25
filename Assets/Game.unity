@@ -1762,7 +1762,7 @@ MonoBehaviour:
   origin: {fileID: 898956018}
   numberOfRocks: 200
   maxSpeed: 1
-  maxTorque: 15
+  maxTorque: 45
 --- !u!4 &931908012
 Transform:
   m_ObjectHideFlags: 0
