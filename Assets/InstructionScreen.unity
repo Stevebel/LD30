@@ -101,12 +101,13 @@ TextMesh:
   m_GameObject: {fileID: 59577442}
   m_Text: "Some people just can't pay their debts, so their homes\r\nhave been foreclosed.
     It's up to one intrepid space trucker\r\n(planet) to repo these home (planets).\r\n\r\nGoal\r\nTow
-    as many planets as you can to the parking space and\r\nanchor it there. Watch
-    out, some (all) people will try to\r\nstop you repoing their planet. You'll have
-    to pay for any\r\ndamages to the planet you make on collection so be careful.\r\n\r\nControls\r\nWASD
-    - Move\r\nMouse 1/Left Ctrl - Fire a harpoon (due to a legal loophole,\r\n this
-    is a legitimate form of self-defense!)\r\nMouse 2/Left Shift - Fire a tethered
-    harpoon (great for\r\n towing planets)\r\nSpace - Detach all harpoons"
+    as many planets as you can to the parking space and\r\ntie it to all 3 anchors.
+    Watch out, some (all) people will try to\r\nstop you repoing their planet. You'll
+    have to pay for any\r\ndamages to the planet you make on collection so be careful.\r\n\r\nControls\r\nWASD
+    - Move\r\nLEFT MOUSE BUTTON/LEFT CTRL Fire a harpoon \r\n (due to a legal loophole,
+    this is a legitimate form of self-defense!)\r\nRIGHT MOUSE BUTTON/LEFT SHIFT -
+    Fire a tethered harpoon \r\n (great for towing planets)\r\nSPACE - Detach all
+    harpoons"
   m_OffsetZ: 0
   m_CharacterSize: .200000003
   m_LineSpacing: 1
@@ -438,7 +439,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 530680080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.3322711, y: -3.63688183, z: 0}
+  m_LocalPosition: {x: 3.29473901, y: -3.66729307, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
