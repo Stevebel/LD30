@@ -88,7 +88,7 @@ public class HarpoonTarget : MonoBehaviour
 			Camera.main.audio.clip = planetSound[Random.Range (0, planetSound.Length)];
 			Camera.main.audio.Play ();
 		}
-		else
+		else if(collision.gameObject.tag != "Enemy" )
 		{
 			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier, collisionCenter, angle);
 			Camera.main.audio.clip = planetSound[Random.Range (0, planetSound.Length)];
