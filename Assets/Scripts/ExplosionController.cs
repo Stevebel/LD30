@@ -7,8 +7,8 @@ public class ExplosionController : MonoBehaviour
 
 	void Start()
 	{
-		audio.clip = explosionSound[Random.Range (0, explosionSound.Length)];
-		audio.Play ();
+		Camera.main.audio.clip = explosionSound[Random.Range (0, explosionSound.Length)];
+		Camera.main.audio.Play ();
 		Invoke("Die", particleSystem.duration);
 	}
 

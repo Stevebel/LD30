@@ -68,6 +68,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96594d8f60683d448d638c780687743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anchorSound:
+  - {fileID: 8300000, guid: fc525601819d4e543a2fe6f08a7077ae, type: 3}
+  - {fileID: 8300000, guid: 5fa6d877b9d58bd439128eeda500c222, type: 3}
+  - {fileID: 8300000, guid: 66061b45e20a9274eb07ca882f16f0aa, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

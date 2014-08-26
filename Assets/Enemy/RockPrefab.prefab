@@ -70,6 +70,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   explosionPrefab: {fileID: 100000, guid: 3c1f0555cc3fd4e1d87382fbaa007f8f, type: 2}
+  explosionSound:
+  - {fileID: 8300000, guid: 6001f8c6581b8604e838732d7fb2b3dd, type: 3}
+  - {fileID: 8300000, guid: e97ad4f5b6de82a42a340f581d408587, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

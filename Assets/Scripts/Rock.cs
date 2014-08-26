@@ -5,6 +5,7 @@ public class Rock : MonoBehaviour
 {
 	[SerializeField] int maxHealth;
 	[SerializeField] GameObject explosionPrefab;
+	[SerializeField] AudioClip[] explosionSound;
 
 	private int currentHealth;
 
@@ -25,6 +26,8 @@ public class Rock : MonoBehaviour
 		if(currentHealth <= 0)
 		{
 			Instantiate (explosionPrefab, transform.position, transform.rotation);
+			Camera.main.audio.clip = explosionSound[Random.Range (0, explosionSound.Length)];
+			Camera.main.audio.Play ();
 			Destroy(gameObject);
 		}
 	}

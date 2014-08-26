@@ -5,6 +5,8 @@ public class Anchor : TetherCollider
 {
 	private List<Rigidbody2D> targets;
 
+	[SerializeField] AudioClip[] anchorSound;
+
 	void Awake()
 	{
 		targets = new List<Rigidbody2D>();
@@ -38,6 +40,8 @@ public class Anchor : TetherCollider
 	            tether.joint = joint;
 	            //tether.transform.parent = target.transform;
                 harpoonTarget.AttachToAnchor(this);
+				Camera.main.audio.clip = anchorSound[targets.Count];
+				Camera.main.audio.Play();
 				targets.Add(target);
 			}
         }

@@ -37,8 +37,8 @@ public class EnemyController : MonoBehaviour
 	{
 		Rigidbody2D laser = Instantiate(enemyLaserPrefab, transform.position, transform.rotation) as Rigidbody2D;
 		laser.velocity = laser.transform.up * laserSpeed;
-		audio.clip = fireSound[Random.Range (0, fireSound.Length)];
-		audio.Play ();
+		Camera.main.audio.clip = fireSound[Random.Range (0, fireSound.Length)];
+		Camera.main.audio.Play ();
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)

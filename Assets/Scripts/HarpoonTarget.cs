@@ -10,6 +10,7 @@ public class HarpoonTarget : MonoBehaviour
 	[SerializeField] float damageCostMultiplier = 0.1f;
 	[SerializeField] AudioClip[] harpoonHitSound;
 	[SerializeField] AudioClip[] tetherSound;
+	[SerializeField] AudioClip[] planetSound;
 
 	public int currentHarpoons;
     public List<Anchor> attachedAnchors;
@@ -70,21 +71,29 @@ public class HarpoonTarget : MonoBehaviour
                 if (HarpoonGun.gun.Attach(this, collision.gameObject, anchor))
 				{
                     currentHarpoons++;
-					audio.clip = tetherSound[Random.Range (0, tetherSound.Length)];
-					audio.Play ();
+					Camera.main.audio.clip = tetherSound[Random.Range (0, tetherSound.Length)];
+					Camera.main.audio.Play ();
 				}
 				else
 				{
 					Score.score.AddScore(damageCostMultiplier * -5f * Random.Range(0.8f, 1.2f), collisionCenter, angle);
-					audio.clip = harpoonHitSound[Random.Range (0, harpoonHitSound.Length)];
-					audio.Play ();
+					Camera.main.audio.clip = harpoonHitSound[Random.Range (0, harpoonHitSound.Length)];
+					Camera.main.audio.Play ();
 				}
             }
 		}
 		else if(collision.gameObject.tag == "Rock" && collision.gameObject.renderer.isVisible)
+		{
 			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier, collisionCenter, angle);
+			Camera.main.audio.clip = planetSound[Random.Range (0, planetSound.Length)];
+			Camera.main.audio.Play ();
+		}
 		else
+		{
 			Score.score.AddScore (-collision.relativeVelocity.magnitude * Mathf.Sqrt(collision.rigidbody.mass) * damageCostMultiplier, collisionCenter, angle);
+			Camera.main.audio.clip = planetSound[Random.Range (0, planetSound.Length)];
+			Camera.main.audio.Play ();
+		}
 	}
 
 	void Die()

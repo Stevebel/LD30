@@ -273,6 +273,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96594d8f60683d448d638c780687743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anchorSound:
+  - {fileID: 8300000, guid: fc525601819d4e543a2fe6f08a7077ae, type: 3}
+  - {fileID: 8300000, guid: 5fa6d877b9d58bd439128eeda500c222, type: 3}
+  - {fileID: 8300000, guid: 66061b45e20a9274eb07ca882f16f0aa, type: 3}
 --- !u!58 &224289276
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -868,6 +872,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400000, guid: 449a809341755f24d953f8494c915c6c, type: 2}
+      propertyPath: anchorSound.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 449a809341755f24d953f8494c915c6c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.25452209
@@ -904,6 +912,18 @@ Prefab:
       propertyPath: m_TagString
       value: Anchor
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 449a809341755f24d953f8494c915c6c, type: 2}
+      propertyPath: anchorSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fc525601819d4e543a2fe6f08a7077ae, type: 3}
+    - target: {fileID: 11400000, guid: 449a809341755f24d953f8494c915c6c, type: 2}
+      propertyPath: anchorSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5fa6d877b9d58bd439128eeda500c222, type: 3}
+    - target: {fileID: 11400000, guid: 449a809341755f24d953f8494c915c6c, type: 2}
+      propertyPath: anchorSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 66061b45e20a9274eb07ca882f16f0aa, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 449a809341755f24d953f8494c915c6c, type: 2}
   m_RootGameObject: {fileID: 224289273}
@@ -1556,7 +1576,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 449a809341755f24d953f8494c915c6c, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 449a809341755f24d953f8494c915c6c, type: 2}
       propertyPath: m_TagString
@@ -3207,6 +3227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96594d8f60683d448d638c780687743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anchorSound:
+  - {fileID: 8300000, guid: fc525601819d4e543a2fe6f08a7077ae, type: 3}
+  - {fileID: 8300000, guid: 5fa6d877b9d58bd439128eeda500c222, type: 3}
+  - {fileID: 8300000, guid: 66061b45e20a9274eb07ca882f16f0aa, type: 3}
 --- !u!58 &1385084850
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3410,6 +3434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96594d8f60683d448d638c780687743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anchorSound:
+  - {fileID: 8300000, guid: fc525601819d4e543a2fe6f08a7077ae, type: 3}
+  - {fileID: 8300000, guid: 5fa6d877b9d58bd439128eeda500c222, type: 3}
+  - {fileID: 8300000, guid: 66061b45e20a9274eb07ca882f16f0aa, type: 3}
 --- !u!58 &1595368108
 CircleCollider2D:
   m_ObjectHideFlags: 0
